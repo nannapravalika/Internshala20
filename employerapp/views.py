@@ -5,7 +5,7 @@ from django.shortcuts import redirect, render
 from employerapp.models import EmployerRegModel
 
 # Create your views here.
-def employerlogin(request):
+def employerlogin(request): 
     if request.method=="POST":
         name = request.POST.get('Username')
         password =request.POST.get('Password')
