@@ -155,47 +155,51 @@
                 <br>
                 <br>
                 <div class=row >
-                <div class="card col-sm-4">
-                    <div class="card text-center col-sm-12">
-                        <img src="{% static 'img/WFH.jpg' %}"/>
+                    <div class=d-flex flex-wrap justify-content-evenly>
+                        <div class="card col-sm-4">
+                            <div class="card text-center col-sm-12">
+                                <img src="{% static 'img/WFH.jpg' %}"/>
+                            </div>
+                            <a href="{% url 'student_form' %}" class="btn btn-primary"> Work From Home</a>
+                        </div>  
+                        <div class="card col-sm-4">
+                            <div class="card text-center col-sm-12">
+                                <img src="{% static 'img/PT.jpg' %}"/>
+                            </div>
+                            <a href="{% url 'student_form' %}" class="btn btn-primary">Part time  </a>
+                        </div>
+                        <div class="card col-sm-4">
+                            <div class="card text-center col-sm-12">
+                                <img src="{% static 'img/FT.jpg' %}"/>
+                            </div>
+                            <a href="{% url 'student_form' %}" class="btn btn-primary">Full time </a>
+                        </div>
                     </div>
-                    <a href="{% url 'student_form' %}" class="btn btn-primary"> Work From Home</a>
-                </div>  
-                <div class="card col-sm-4">
-                    <div class="card text-center col-sm-12">
-                        <img src="{% static 'img/PT.jpg' %}"/>
-                    </div>
-                    <a href="{% url 'student_form' %}" class="btn btn-primary">Part time  </a>
-                </div>
-                <div class="card col-sm-4">
-                    <div class="card text-center col-sm-12">
-                        <img src="{% static 'img/FT.jpg' %}"/>
-                    </div>
-                    <a href="{% url 'student_form' %}" class="btn btn-primary">Full time </a>
-                </div>
                 </div>
                 <br>
                 <br>
                 <br>
                 <div class=row> 
-                <div class="card col-sm-4">
-                    <div class="card col-sm-12">
-                        <img src="{% static 'img/Internship.jpg' %}"/>
+                    <div class=d-flex flex-wrap justify-content-evenly></div>
+                        <div class="card col-sm-4">
+                            <div class="card col-sm-12">
+                                <img src="{% static 'img/Internship.jpg' %}"/>
+                            </div>
+                            <a href="{% url 'student_form' %}" class="btn btn-primary">Internship</a>
+                        </div>
+                        <div class="card   col-sm-4">
+                            <div class="card col-sm-12">
+                                <img src="{% static 'img/Location.jpg' %}">
+                            </div>
+                            <a href="{% url 'student_form' %}" class="btn btn-primary">Search by location</a>
+                        </div>
+                        <div class="card col-sm-4">
+                            <div class="card col-sm-12">
+                                <img src="{% static 'img/Stream.jpg' %}"/>
+                            </div>
+                            <a href="{% url 'student_form' %}" class="btn btn-primary"> Search by Stream </a>
+                        </div>
                     </div>
-                    <a href="{% url 'student_form' %}" class="btn btn-primary">Internship</a>
-                </div>
-                <div class="card   col-sm-4">
-                    <div class="card col-sm-12">
-                        <img src="{% static 'img/Location.jpg' %}">
-                    </div>
-                    <a href="{% url 'student_form' %}" class="btn btn-primary">Search by location</a>
-                </div>
-                <div class="card col-sm-4">
-                    <div class="card col-sm-12">
-                        <img src="{% static 'img/Stream.jpg' %}"/>
-                    </div>
-                    <a href="{% url 'student_form' %}" class="btn btn-primary"> Search by Stream </a>
-                </div>
                 </div>
         </div>
         <br>
