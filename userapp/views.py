@@ -50,8 +50,8 @@ def Student_sent_resume(request):
     return render (request,'student/student_sent_resume.html')
 
 def internship_details(request):
-    return render(request,'student_Internship_details.html')
+    return render(request,'student/student_Internship_details.html')
 
 def internship_listing(request):
-    return render(request,'student_Internship_listing.html')
+    return render(request,'student/student_Internship_listing.html')
 
