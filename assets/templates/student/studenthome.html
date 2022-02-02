@@ -98,58 +98,59 @@
 
                 <br> <br> 
                 <main> 
-                    <div class=container> 
+                    <div class="container justify-content-evenly"> 
                         <header class="page-header">
                             <h1 class="page-title">     Dashboard</h1>
                         </header>
-              
-                        <div class="card text-white bg-light col-sm-3">
-                            <div class="card-body">
-                            <h4 class="card-title">Viewed Internships</h4>
-                            <br>
-                            <br><br>
-                            <p class="card-text">10</p>
-                            <br><br>
-                            <a href="{% url 'student_internships' %}" class="btn btn-primary">View</a> 
-                            <br><br>
+                      
+                            <div class="card text-white bg-light col-sm-3">
+                                <div class="card-body">
+                                <h4 class="card-title">Viewed Internships</h4>
+                                <br>
+                                <br><br>
+                                <p class="card-text">10</p>
+                                <br><br>
+                                <a href="{% url 'student_internships' %}" class="btn btn-primary">View</a> 
+                                <br><br>
+                                </div>
+                            </div> 
+                            
+                            
+                            <div class="card text-white bg-light col-sm-3" >
+                                <div class="card-body">
+                                <h4 class="card-title">Sent Resume </h4>
+                                <br>
+                                <br><br>
+                                <p class="card-text"> 4</p>
+                                <br><br>
+                                <a href="{% url 'student_sent_resume' %}" class="btn btn-primary">View</a> 
+                                <br><br>
+                                </div>  
+                            </div>
+                            <div class="card text-white bg-light col-sm-3" >
+                                <div class="card-body">
+                                <h4 class="card-title"> Responses</h4>
+                                <br>
+                                <br><br>
+                                <p class="card-text">30</p>
+                                <br><br>
+                                <a href="{% url 'student_response' %}" class="btn btn-primary">View</a> 
+                                <br><br>
+                                </div>
+                            </div> 
+                            <div class="card text-white bg-light col-sm-3" >
+                                <div class="card-body">
+                                <h4 class="card-title">Saved Internships </h4>
+                                <br>
+                                <br><br>
+                                <p class="card-text">50</p>
+                                <br><br>
+                                <a href="{% url 'student_saved' %}" class="btn btn-primary">View</a> 
+                                <br><br>
+                                </div>
                             </div>
                         </div> 
-                         
-                        
-                        <div class="card text-white bg-light col-sm-3" >
-                            <div class="card-body">
-                            <h4 class="card-title">Sent Resume </h4>
-                            <br>
-                            <br><br>
-                            <p class="card-text"> 4</p>
-                            <br><br>
-                            <a href="{% url 'student_sent_resume' %}" class="btn btn-primary">View</a> 
-                            <br><br>
-                            </div>  
-                        </div>
-                        <div class="card text-white bg-light col-sm-3" >
-                            <div class="card-body">
-                            <h4 class="card-title"> Responses</h4>
-                            <br>
-                            <br><br>
-                            <p class="card-text">30</p>
-                            <br><br>
-                            <a href="{% url 'student_response' %}" class="btn btn-primary">View</a> 
-                            <br><br>
-                            </div>
-                        </div> 
-                        <div class="card text-white bg-light col-sm-3" >
-                            <div class="card-body">
-                            <h4 class="card-title">Saved Internships </h4>
-                            <br>
-                            <br><br>
-                            <p class="card-text">50</p>
-                            <br><br>
-                            <a href="{% url 'student_saved' %}" class="btn btn-primary">View</a> 
-                            <br><br>
-                            </div>
-                        </div>
-                    </div> 
+                     
                 </main>
                 <br>
                 <br>
