@@ -54,7 +54,7 @@ def Employer_Post(request):
         Posted_date= request.POST.get(' Posted Date')
         
         
-        EmployerPostModel.objects.create(  Organization_name= Organization_name,location=location, Profile= Profile,Internship_type=Internship_type,
+        EmployerPostModel.objects.create(  Organization_name= Organization_name,location=location,Profile= Profile,Internship_type=Internship_type,
                                          No_of_openings=No_of_openings,Start_Date=Start_Date,Duration=Duration,Stiepend=Stiepend,Skills=Skills,
                                          Description=Description, Profile_picture= Profile_picture,Posted_date=Posted_date)
          
