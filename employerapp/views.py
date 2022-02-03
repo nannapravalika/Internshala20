@@ -58,7 +58,7 @@ def Employer_Post(request):
                                          No_of_openings=No_of_openings,Start_Date=Start_Date,Duration=Duration,Stiepend=Stiepend,Skills=Skills,
                                          Description=Description, Profile_picture= Profile_picture,Posted_date=Posted_date)
          
-    return render(request,'employe/Employe_post.html')
+    return render(request,'employe/Employerpost.html')
 
 def Employer_Internships(request):
     return render(request,'employe/Emp_internship.html')

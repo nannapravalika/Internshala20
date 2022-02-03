@@ -18,7 +18,7 @@ class EmployerPostModel(models.Model):
     Organization_id=models.AutoField(primary_key=True)
     Organization_name=models.CharField(max_length=100,help_text='Enter Organization name')
     location=models.CharField(max_length=100,help_text='Location')
-    Profile=models.CharField(max_length=100,help_text=' Profile')
+    Profile=models.Field(max_length=100,help_text=' Profile')
     Internship_type=models.CharField(max_length=100,help_text='Internship Type')
     No_of_openings=models.IntegerField(help_text='No of openings ')
     Start_Date=models.CharField(max_length=100,help_text='Start Date of Internship')
