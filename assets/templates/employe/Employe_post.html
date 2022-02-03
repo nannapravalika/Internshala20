@@ -79,66 +79,158 @@
        </div>
     <!-- Header End -->
     </header>   <!-- Preloader Start -->
-    <main>
+    <main> <!-- Preloader Start -->
         <div class="container"> 
-     <header class="page-header">
-    <h1 class="page-title" >Post Internship</h1>
-</header>
-<div class="row">
-    <div class="col-sm-12">
-        <textarea placeholder="Type your message here..." class="form-control" rows="9"></textarea>
+            <header class="page-header">
+                <h1 class="page-title" > Post Internship</h1>
+            </header>
+            <form>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label for="validationServer01">Organization name</label>
+                        <input type="text" class="form-control " id="validationServer01" placeholder="First name"    required>
+                        <div class="valid-feedback">
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <label for="validationServer02">Location</label>
+                        <input type="text" class="form-control" id="validationServer02" placeholder="Last name"   required>
+                        <div class="valid-feedback">
+                        
+                       </div>
+                    </div>
+                    <br> <br>
+                    <div class="col-sm-3">
+                        <label value ="  Profile">  Profile </label> 
+                        <br> 
+                            <select>
+                            <option value =" Profile">  Profile </option>   
+                            <option value ="  Design and creative">   Design and Creative </option> 
+                            <option value = "Design and Development">  Design and Development  </option>  
+                            <option value = " Sales and Marketing"> Sales and Marketing  </option>  
+                            <option value = " Mobile Application"> Mobile Application </option>  
+                            <option value = " Construction"> Construction </option>
+                            <option value = " IT">  Information Technology  </option>
+                            <option value = " BPO">   BPO  </option>
+                            <option value = "  Content Writer">   Content Writer  </option>  
+                            </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <label value ="  Profile">  Internship Type </label> 
+                        <br> 
+                            <select>
+                            <option value =" Internship Type">   Internship Type</option>   
+                            <option value =" Regular">   Regular </option> 
+                            <option value = " Work From Home">   Work From Home  </option>  
+                            <option value = "  Full Time"> Full Time  </option>  
+                            <option value = "Part Time"> Part Time </option>    
+                            </select>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="row"> 
+                    <div class="col-sm-3">
+                        <label for="validationServer05">No of openings</label>
+                        <input type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <div class="valid-feedback">
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <label for="validationServer05">Start Date</label>
+                        <input type="text" class="form-control  " id="validationServer05"  placeholder="Start Date" required>
+                        <div class="valid-feedback">
+    
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <label value =" Duration">  Duration</label> 
+                        <br> 
+                            <select>
+                            <option value =" Duration"> Duration</option>   
+                            <option value ="4 weeks ">4 weeks </option> 
+                            <option value = "8 weeks ">8 weeks </option>  
+                            <option value = "16 weeks ">12 weeks </option>  
+                            <option value = "32 weeks ">16 weeks </option> 
+                            <option value = "32 weeks ">20 weeks </option> 
+                            <option value = "32 weeks ">24 weeks </option>   
+                            </select>
+                    </div> 
+                    <div class="col-sm-3">
+                        <label value ="Stiepend">Stiepend</label> 
+                        <br> 
+                            <select>
+                            <option value ="Stiepend">Stiepend</option>   
+                            <option value =" Unpaid">Unpaid </option> 
+                            <option value = " 2000 "> 2000 </option>  
+                            <option value = "3000 "> 3000 </option>  
+                            <option value = " 5000">5000 </option> 
+                            <option value = " 8000">8000</option> 
+                            <option value = " 10K"> 10K</option>   
+                            </select>
+                    </div> 
+                </div> 
+                <br>
+                <br>
+                <br>
+                <div class=row>
+                    <div class=col-sm-6>
+                        <label for="validationServer05">Skills</label>
+                        <input type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <div class="valid-feedback">
+                        
+                        </div>
+                    </div>
+                    <div class=col-sm-6>
+                        <label for="validationServer05">Description</label>
+                        <input type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <div class="valid-feedback">
+                        
+                        </div>
+                    </div>
+                </div>
+                 
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6 mb-5">
+                    <label for="formFile" class="form-label">Profile Photo</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+                <br>  
+                <br> 
+                <br>
+                <br>
+                <br>
+                <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="validCheck3" required>
+                    <br>
+                    <label class="form-check-label" for="ValidCheck3">
+                    Agree to terms and conditions
+                    </label>
+                    
+                    <div class="valid-feedback">
+                    You must agree before submitting.
+                    </div>
+                </div>
+                </div>
+                
+                <button class="btn btn-primary" type="submit">Submit form</button>
+                <br>
+                <br>
+            </form>
     </div>
-</div>
-<br><br><br>
-<div class=col-md-1> 
-<button class=btn> 
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
-    <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
-    <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"/>
-  </svg>
-</button>
-</div>
-<div class=col-md-1 href=""> 
-     <button class=btn> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
-    <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-    <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
-  </svg> </button>
-   
-</div> 
-<div class=col-md-1> 
-<button class=btn>  
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"/>
-  </svg>
-  </button>
-</div>
-<div class=col-md-1> 
-    <button class=btn> 
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
-    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-    <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
-  </svg>
-</button>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<button href="#" class="btn bg-primary"> Post </button>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-</div>
-</main>
+    <br>
+    <br>
+    </main>
 <footer>
     <!-- Footer Start-->
     <div class="footer-area footer-bg footer-padding">
