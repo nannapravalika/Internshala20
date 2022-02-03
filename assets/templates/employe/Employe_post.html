@@ -84,11 +84,12 @@
             <header class="page-header">
                 <h1 class="page-title" > Post Internship</h1>
             </header>
-            <form>
+            <form method="post">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-sm-3">
                         <label for="validationServer01">Organization name</label>
-                        <input type="text" class="form-control " id="validationServer01" placeholder="First name"    required>
+                        <input name="Organization name" type="text" class="form-control " id="validationServer01" placeholder="First name"    required>
                         <div class="valid-feedback">
                         
                         </div>
@@ -96,15 +97,16 @@
                     
                     <div class="col-sm-3">
                         <label for="validationServer02">Location</label>
-                        <input type="text" class="form-control" id="validationServer02" placeholder="Last name"   required>
+                        <input name=" Location" type="text" class="form-control" id="validationServer02" placeholder="Last name"   required>
                         <div class="valid-feedback">
                         
                        </div>
                     </div>
                     <br> <br>
                     <div class="col-sm-3">
-                        <label value ="  Profile">  Profile </label> 
+                        <label value ="Profile">  Profile </label> 
                         <br> 
+                        <input name="Profile ">
                             <select>
                             <option value =" Profile">  Profile </option>   
                             <option value ="  Design and creative">   Design and Creative </option> 
@@ -118,8 +120,9 @@
                             </select>
                     </div>
                     <div class="col-sm-2">
-                        <label value ="  Profile">  Internship Type </label> 
+                        <label value ="Internship Type">  Internship Type </label> 
                         <br> 
+                        <input name="Internship Type">
                             <select>
                             <option value =" Internship Type">   Internship Type</option>   
                             <option value =" Regular">   Regular </option> 
@@ -136,7 +139,7 @@
                 <div class="row"> 
                     <div class="col-sm-3">
                         <label for="validationServer05">No of openings</label>
-                        <input type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <input name="No of openings " type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
                         <div class="valid-feedback">
                         
                         </div>
@@ -144,7 +147,7 @@
                     
                     <div class="col-sm-3">
                         <label for="validationServer05">Start Date</label>
-                        <input type="text" class="form-control  " id="validationServer05"  placeholder="Start Date" required>
+                        <input name="Start Date"type="text" class="form-control  " id="validationServer05"  placeholder="Start Date" required>
                         <div class="valid-feedback">
     
                         </div>
@@ -153,6 +156,7 @@
                     <div class="col-sm-3">
                         <label value =" Duration">  Duration</label> 
                         <br> 
+                        <input name="Internship Duration">
                             <select>
                             <option value =" Duration"> Duration</option>   
                             <option value ="4 weeks ">4 weeks </option> 
@@ -166,6 +170,7 @@
                     <div class="col-sm-3">
                         <label value ="Stiepend">Stiepend</label> 
                         <br> 
+                        <input name="Stiepend">
                             <select>
                             <option value ="Stiepend">Stiepend</option>   
                             <option value =" Unpaid">Unpaid </option> 
@@ -183,14 +188,14 @@
                 <div class=row>
                     <div class=col-sm-6>
                         <label for="validationServer05">Skills</label>
-                        <input type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <input name="Skills Required" type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
                         <div class="valid-feedback">
                         
                         </div>
                     </div>
                     <div class=col-sm-6>
                         <label for="validationServer05">Description</label>
-                        <input type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <input name="'Description" type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
                         <div class="valid-feedback">
                         
                         </div>
@@ -202,7 +207,7 @@
                 <br>
                 <div class="col-md-6 mb-5">
                     <label for="formFile" class="form-label">Profile Photo</label>
-                    <input class="form-control" type="file" id="formFile">
+                    <input name="Profile Picture" class="form-control" type="file" id="formFile">
                 </div>
                 <br>  
                 <br> 
