@@ -14,7 +14,7 @@ class EmployerRegModel(models.Model):
     class Meta:
         db_table='employer_details'
     
-class EmployerPostModel(models.Model):
+class EmployePostModel(models.Model):
     Organization_id=models.AutoField(primary_key=True)
     Organization_name=models.CharField(max_length=100,help_text='Enter Organization name')
     location=models.TextField(max_length=100,help_text='Location')
@@ -33,6 +33,6 @@ class EmployerPostModel(models.Model):
         return self.Profile +  " " + self.Organization_name 
 
     class Meta:
-        db_table='Post_details'
+        db_table='post_details'
     
 
