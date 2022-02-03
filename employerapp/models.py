@@ -33,6 +33,6 @@ class EmployePostModel(models.Model):
         return self.Profile +  " " + self.Organization_name 
 
     class Meta:
-        db_table='post_details'
+        db_table='Internship_post_details'
     
 
