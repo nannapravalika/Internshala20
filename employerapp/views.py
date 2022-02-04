@@ -41,23 +41,22 @@ def Employer_Request(request):
 def Employer_Post(request):
     Details=EmployePostModel.objects.all()
     if request.method=="POST":
-        Organization_name= request.POST.get('Organization name')
-        location= request.POST.get('Location')
-        Profile= request.POST.get(' Profile')
-        Internshiptype= request.POST.get('Internship Type')
-        No_of_openings= request.POST.get('No of openings ')
-        Start_Date= request.POST.get('Start Date')
-        Duration=request.POST.get( ' Internship Duration')
-        Stiepend=request.POST.get( 'Stiepend')
-        Skills= request.POST.get(' Skills Required')
-        Description= request.POST.get('Description')
-        Profile_picture= request.POST.get('Profile Picture')
-        Posted_date= request.POST.get(' Posted Date')
-        
+        Organization_name= request.POST.get('org_name')
+        location= request.POST.get('location')
+        Profile= request.POST.get('profile')
+        Internshiptype= request.POST.get('internship_type')
+        No_of_openings= request.POST.get('openings')
+        Start_Date= request.POST.get('start_date')
+        Duration=request.POST.get( 'duration')
+        Stiepend=request.POST.get( 'stiepend')
+        Skills= request.POST.get('skills')
+        Description= request.POST.get('description')
+        Profile_picture= request.POST.get('pic')        
         
         EmployePostModel.objects.create(Organization_name= Organization_name,location=location,Profile=Profile,Internship_type=Internshiptype,
                                          No_of_openings=No_of_openings,Start_Date=Start_Date,Duration=Duration,Stiepend=Stiepend,Skills=Skills,
-                                         Description=Description, Profile_picture= Profile_picture,Posted_date=Posted_date)
+                                         Description=Description, Profile_picture= Profile_picture)
+        
     return render(request,'employe/Employe_post.html', {'D':Details})
 
 

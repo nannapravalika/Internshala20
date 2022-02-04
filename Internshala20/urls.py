@@ -19,6 +19,7 @@ from adminapp import views as admin_views
 from employerapp import views as employer_views
 from userapp import views as user_views
 from mainapp import views as main_views
+
 from django.conf.urls.static import static
 from django.conf import settings
 

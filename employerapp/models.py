@@ -2,6 +2,7 @@ from ast import Is, Pass
 from distutils.command import upload
 from django.db import models
 from django.forms import CharField
+import datetime, time
 
 # Create your models here.
 class EmployerRegModel(models.Model):
@@ -17,18 +18,6 @@ class EmployerRegModel(models.Model):
     class Meta:
         db_table='employer_details'
 
-class Profile(models.Model):
-    Design_and_Creative = CharField()
-    Design_and_Development=CharField()
-    Sales_and_Marketing=CharField()
-    Design_and_Development=CharField()
-    Mobile_Application=CharField()
-    Design_and_Development=CharField()
-    Design_and_Development=CharField()
-    Design_and_Development=CharField()
-
-     
-        
 class EmployePostModel(models.Model):
     Organization_id=models.AutoField(primary_key=True)
     Organization_name=models.CharField(max_length=100)
@@ -42,10 +31,10 @@ class EmployePostModel(models.Model):
     Skills=models.TextField ( )
     Description=models.TextField ( )
     Profile_picture=models.ImageField(upload_to='images/',null=True)
-    Posted_date=models.DateField(max_length=100)
+    Posted_date=models.DateField(("Date"), default=datetime.date.today)
     
     def __str__(self):
         return self.Profile +  " " + self.Organization_name 
 
     class Meta:
-        db_table='Internship_post_details'  
+        db_table='post_details'  
