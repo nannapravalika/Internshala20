@@ -87,7 +87,6 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="row">
-                {% for D in Details  %}
                     <div class="col-sm-3">
                         <label for="validationServer01">Organization name</label>
                         <input name="Organization name" type="text" class="form-control " id="validationServer01" placeholder="First name"    required>
@@ -232,7 +231,6 @@
                 <button class="btn btn-primary" type="submit">Submit form</button>
                 <br>
                 <br>
-            {% endfor %}
             </form>
     </div>
     <br>

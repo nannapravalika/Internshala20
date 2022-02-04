@@ -44,7 +44,7 @@ def Employer_Post(request):
         Organization_name= request.POST.get('Organization name')
         location= request.POST.get('Location')
         Profile= request.POST.get(' Profile')
-        Internship_type= request.POST.get('Internship Type')
+        Internshiptype= request.POST.get('Internship Type')
         No_of_openings= request.POST.get('No of openings ')
         Start_Date= request.POST.get('Start Date')
         Duration=request.POST.get( ' Internship Duration')
@@ -55,7 +55,7 @@ def Employer_Post(request):
         Posted_date= request.POST.get(' Posted Date')
         
         
-        EmployePostModel.objects.create(Organization_name= Organization_name,location=location,Profile=Profile,Internship_type=Internship_type,
+        EmployePostModel.objects.create(Organization_name= Organization_name,location=location,Profile=Profile,Internship_type=Internshiptype,
                                          No_of_openings=No_of_openings,Start_Date=Start_Date,Duration=Duration,Stiepend=Stiepend,Skills=Skills,
                                          Description=Description, Profile_picture= Profile_picture,Posted_date=Posted_date)
     return render(request,'employe/Employe_post.html', {'D':Details})
