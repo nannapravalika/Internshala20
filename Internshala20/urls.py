@@ -19,6 +19,8 @@ from adminapp import views as admin_views
 from employerapp import views as employer_views
 from userapp import views as user_views
 from mainapp import views as main_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -65,3 +67,5 @@ urlpatterns = [
     path('admin-user-view',admin_views.Admin_user,name='admin_user'),
     
 ]
+
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
