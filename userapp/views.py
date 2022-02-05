@@ -2,8 +2,9 @@ from ast import Return
 from tabnanny import check
 from django.http import request
 from django.shortcuts import redirect, render
+from employerapp.models import EmployePostModel
 
-from userapp.models import StudentRegModel
+from userapp.models import StudentApplyModel, StudentRegModel
 
 # Create your views here.
 def studentlogin(request):
@@ -35,7 +36,20 @@ def Student_home(request):
     return render(request,'student/studenthome.html')
 
 def Student_form(request):
-    return render(request,'student/Studentform.html')
+    Details=StudentApplyModel.objects.all()
+    if request.method=="POST":
+        fname=request.POST.get('fname')
+        lname=request.POST.get('lname')
+        Qualification=request.POST.get('qualification')
+        Percentage=request.POST.get('percentage')
+        City=request.POST.get('City')
+        State=request.POST.get('State')
+        Pcode=request.POST.get('Pcode')
+        Resume=request.POST.get('resume')
+        
+        StudentApplyModel.objects.create(fname=fname,lname=lname,Qualification=Qualification,Percentage=Percentage,City=City,State=State,Pcode=Pcode,Resume=Resume)
+        
+    return render(request,'student/studentform.html', {'D':Details})
 
 def Student_saved(request):
     return render (request,'student/student_saved_internships.html')
@@ -50,8 +64,10 @@ def Student_sent_resume(request):
     return render (request,'student/student_sent_resume.html')
 
 def internship_details(request):
-    return render(request,'student/student_Internship_details.html')
+    Details=EmployePostModel.objects.all()
+    return render(request,'student/student_Internship_details.html', {'D':Details})
 
 def internship_listing(request):
-    return render(request,'student/student_Internship_listing.html')
+    Details=EmployePostModel.objects.all()
+    return render(request,'student/student_Internship_listing.html', {'D':Details})
 

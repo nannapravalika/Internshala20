@@ -80,6 +80,7 @@
         <!-- Header End -->
     </header>
     <main>
+        
 
         <!-- Hero Area Start-->
         <div class="slider-area ">
@@ -287,6 +288,7 @@
                                 </div>
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
+                                {% for D in Details %}
                                 <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
@@ -294,152 +296,153 @@
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="{% url 'internships_details' %}">
-                                                <h4>Digital Marketer</h4>
+                                                <h4> {{ D.Profile }}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>{{ D.Organization_name }}</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{ D.location }}</li>
+                                                <li>{{ D.Stiepend }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="{% url 'internships_details' %}">Apply Now</a>
+                                        <span>{{ D.Posted_date }}</span>
                                     </div>
                                 </div>
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
+                                <!-- <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
                                             <a href=""><img src="{% static 'img/icon/job-list2.png' %}" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="{% url 'internships_details' %}">
-                                                <h4>Web Designer</h4>
+                                                <h4>{{ D.Profile }}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>{{ D.Organization_name }}</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{ D.location }}</li>
+                                                <li>{{ D.Stiepend }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="{% url 'internships_details' %}">Apply Now</a>
+                                        <span>{{ D.Posted_date }}</span>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
+                                <!-- <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
                                             <a href="#"><img src="{% static 'img/icon/job-list3.png' %}" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="{% url 'internships_details' %}">
-                                                <h4>Bussiness Process Executive</h4>
+                                                <h4>{{ D.Profile }}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>{{ D.Organization_name }}</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{ D.location }}</li>
+                                                <li>{{ D.Stiepend }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="{% url 'internships_details' %}">Apply Now</a>
+                                        <span>{{ D.Posted_date }}</span>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
+                                <!-- <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
                                             <a href="#"><img src="{% static 'img/icon/job-list4.png' %}" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="{% url 'internships_details' %}">
-                                                <h4> Full stack Developer</h4>
+                                                <h4>{{ D.Profile }}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>{{ D.Organization_name }}</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{ D.location }}</li>
+                                                <li>{{ D.Stiepend }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="{% url 'internships_details' %}">Apply Now</a>
+                                        <span>{{ D.Posted_date }}</span>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
+                                <!-- <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
                                             <a href="#"><img src="{% static 'img/icon/job-list1.png' %}" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="{% url 'internships_details' %}">
-                                                <h4> Software Developer</h4>
+                                                <h4>{{ D.Profile }}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>{{ D.Organization_name }}</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{ D.location }}</li>
+                                                <li>{{ D.Stiepend }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="{% url 'internships_details' %}">Apply Now</a>
+                                        <span>{{ D.Posted_date }}</span>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
+                                <!-- <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
                                             <a href="#"><img src="{% static 'img/icon/job-list3.png' %}" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="{% url 'internships_details' %}">
-                                                <h4> UI/UX Developer</h4>
+                                                <h4>{{ D.Profile }}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>{{ D.Organization_name }}</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{ D.location }}</li>
+                                                <li>{{ D.Stiepend }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="{% url 'internships_details' %}">Apply Now</a>
+                                        <span>{{ D.Posted_date }}</span>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
+                                <!-- <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
                                             <a href="#"><img src="{% static 'img/icon/job-list4.png' %}" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="{% url 'internships_details' %}">
-                                                <h4>Digital Marketer</h4>
+                                                <h4>{{ D.Profile }}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>{{ D.Organization_name }}</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{ D.location }}</li>
+                                                <li>{{ D.Stiepend }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="{% url 'internships_details' %}">Apply Now</a>
+                                        <span>{{ D.Posted_date }}</span>
                                     </div>
-                                </div>
+                                </div> -->
+                                {% endfor %}
                             </div>
                         </section>
                         <!-- Featured_job_end -->

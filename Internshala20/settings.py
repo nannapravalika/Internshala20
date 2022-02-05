@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Internshala20.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':  'codebook',
+        'NAME':  'Internshala20',
         'HOST': '127.0.0.1',
         'USER': 'root',
         'PASSWORD':'',

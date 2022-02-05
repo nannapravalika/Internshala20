@@ -87,11 +87,12 @@
         <header class="page-header">
             <h1 class="page-title" >Application Form</h1>
         </header>
-        <form>
+        <form method="post">
+            {% csrf_token %}
             <div class="row">
                 <div class="col-sm-3">
                     <label for="validationServer01">First name</label>
-                    <input type="text" class="form-control " id="validationServer01" placeholder="First name"    required>
+                    <input name="fname" type="text" class="form-control " id="validationServer01" placeholder="First name"    required>
                     <div class="valid-feedback">
                     
                     </div>
@@ -99,7 +100,7 @@
                 
                 <div class="col-sm-3">
                     <label for="validationServer02">Last name</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Last name"   required>
+                    <input name="lname" type="text" class="form-control" id="validationServer02" placeholder="Last name"   required>
                     <div class="valid-feedback">
                     
                     </div>
@@ -108,8 +109,8 @@
                 <div class="col-sm-3">
                     <label value =" Highest Qualification">  Highest Qualification </label> 
                     <br> 
-                        <select>  
-                        <option value =" Highest Qualification">  Highest Qualification </option> 
+                        <select name="qualification">  
+                        <option value =" Highest Qualification">    </option> 
                         <option value = " SSC">  SSC  </option>  
                         <option value = "Inter">  Inter   </option>  
                         <option value = "BE/BTech">BE/BTech </option>  
@@ -121,7 +122,7 @@
                 </div>
                 <div class="col-sm-2">
                     <label for="validationServer03">Percentage</label>
-                    <input type="text" class="form-control" id="validationServer03" placeholder="Percentage" required>
+                    <input name="percentage"type="text" class="form-control" id="validationServer03" placeholder="Percentage" required>
                     <div class="valid-feedback">
                     
                     </div>
@@ -134,7 +135,7 @@
             <div class="row"> 
                 <div class="col-sm-4">
                     <label for="validationServer05">City</label>
-                    <input type="text" class="form-control " id="validationServer05" placeholder="City" required>
+                    <input name="City"type="text" class="form-control " id="validationServer05" placeholder="City" required>
                     <div class="valid-feedback">
                     
                     </div>
@@ -142,7 +143,7 @@
                 
                 <div class="col-sm-4">
                     <label for="validationServer05">State</label>
-                    <input type="text" class="form-control  " id="validationServer05"  placeholder="State" required>
+                    <input name="State"type="text" class="form-control  " id="validationServer05"  placeholder="State" required>
                     <div class="valid-feedback">
 
                     </div>
@@ -150,7 +151,7 @@
                 
                 <div class="col-sm-2">
                     <label for="validationServer05">Postal Code</label>
-                    <input type="text" class="form-control " id="validationServer05"placeholder="Postal Code" required>
+                    <input name="Pcode" type="text" class="form-control " id="validationServer05"placeholder="Postal Code" required>
                     <div class="valid-feedback">
                     
                     </div>
@@ -161,7 +162,7 @@
             <br>
             <div class="col-md-6 mb-5">
                 <label for="formFile" class="form-label">Upload Resume</label>
-                <input class="form-control" type="file" id="formFile">
+                <input name="resume" class="form-control" type="file" id="formFile">
             </div>
             <br>  
             <br> 
