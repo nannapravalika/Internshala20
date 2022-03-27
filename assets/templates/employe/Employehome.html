@@ -11,6 +11,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
 
 		<!-- CSS here -->
+       
             <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
             <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
             <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
@@ -23,6 +24,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -62,11 +64,18 @@
                                             <li><a href="{% url 'employer_Internships' %}">Internships</a></li>
                                         </ul>
                                     </nav>
-                                </div>          
-                                <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="{% url 'index' %}" class="btn head-btn1">Logout</a>
                                 </div>
+                                
+                                
+                                <div class="justify-content-evenly header-btn d-none f-right d-lg-block">
+                                   
+                                    <a href="{% url 'index' %}" class="btn head-btn2">
+                                        Logout
+                                    </a>
+                                </div>
+                            </div>          
+                                <!-- Header-btn -->
+                               
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -84,43 +93,48 @@
             <header class="page-header">
                 <h1 class="page-title" >      Dashboard</h1>
             </header>
-  
+        <center>
             <div class="card text-white bg-light col-sm-4">
                 <div class="card-body">
                 <h4 class="card-title">Employes</h4>
                 <br>
                 <h6 class="card-subtitle mb-2 text-muted">Hired Candidates</h6>
                 <br><br>
-                <p class="card-text">10</p>
+                <h1 class="card-title">{{Students}}</h1>
                 <br><br>
                 <a href="{% url 'employer_Hired' %}" class="btn btn-primary">View</a> 
                 <br><br>
                 </div>
-            </div> 
+            </div>
+        </center>
+        <center>
             <div class="card text-white bg-light col-sm-4" >
                 <div class="card-body">
                 <h4 class="card-title"> Requests</h4>
                 <br>
                 <h6 class="card-subtitle mb-2 text-muted"> Pending Request</h6>
                 <br><br>
-                <p class="card-text"> 4</p>
+                <h1 class="card-title"> {{Requests}}</h1>
                 <br><br>
                 <a href="{% url 'employer_Request' %}" class="btn btn-primary">View</a> 
                 <br><br>
                 </div>  
             </div>
+        </center> 
+        <center>
             <div class="card text-white bg-light col-sm-4" >
                 <div class="card-body">
                 <h4 class="card-title">Internships</h4>
                 <br>
                 <h6 class="card-subtitle mb-2 text-muted">Total Internships</h6>
                 <br><br>
-                <p class="card-text">30</p>
+                <h1 class="card-title"> {{Internships}}</h1> 
                 <br><br>
                 <a href="{% url 'employer_Internships' %}" class="btn btn-primary">View</a> 
                 <br><br>
                 </div>
             </div> 
+        </center>
              
         </div> 
     </main>

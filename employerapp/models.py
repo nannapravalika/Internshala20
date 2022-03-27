@@ -1,5 +1,7 @@
 from ast import Is, Pass
+from contextlib import nullcontext
 from distutils.command import upload
+from operator import truediv
 from django.db import models
 from django.forms import CharField
 import datetime, time
@@ -19,8 +21,10 @@ class EmployerRegModel(models.Model):
         db_table='employer_details'
 
 class EmployePostModel(models.Model):
-    Organization_id=models.AutoField(primary_key=True)
+    emp_id = models.IntegerField(null=True)
+    internship_id=models.AutoField(primary_key=True)
     Organization_name=models.CharField(max_length=100)
+    mobile=models.BigIntegerField(null=True)
     email=models.EmailField(max_length=100)
     website=models.CharField(max_length=100)
     location=models.CharField(max_length=100)
@@ -34,6 +38,10 @@ class EmployePostModel(models.Model):
     Description=models.TextField ( )
     Profile_picture=models.ImageField(upload_to='images/',null=True)
     Posted_date=models.DateField(auto_now_add=True)
+    emp_status = models.CharField(max_length=100,default='pending')
+    Pan=models.CharField(max_length=100,null=True)
+    Year_of_establishment=models.IntegerField(null=True)
+    Published_date=models.BooleanField(default=True)
     
     def __str__(self):
         return self.Profile +  " " + self.Organization_name 

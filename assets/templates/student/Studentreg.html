@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -94,8 +95,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3 class="thin text-center">Register a new account</h3>
-                    <form method="post">
+                    <form method="post" name="myform" onsubmit="return registration();">
                         {% csrf_token %}
+                        {% for message in messages %}
+                        {% if messages %}
+                        <script>
+                            swal("Welcome!", "Registration Succesful!", "success");
+                        </script>
+                        {% endif %}
+                        {% endfor %}
                         <div class="top-margin">
                             <label>First Name</label>
                             <input type="text" name="fname" class="form-control">
@@ -121,7 +129,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <label>Confirm Password <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="conpassword" class="form-control">
                             </div>
                         </div>
 
@@ -306,6 +314,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Jquery Plugins, main Jquery -->	
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
     
 </body>
 </html>

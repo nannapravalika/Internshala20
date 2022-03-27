@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -64,8 +65,9 @@
                                     </nav>
                                 </div>          
                                 <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="{% url 'index' %}" class="btn head-btn1">
+                                <div class="justify-content-evenly header-btn d-none f-right d-lg-block">
+                                    
+                                    <a href="{% url 'index' %}" class="btn head-btn2">
                                         Logout
                                     </a>
                                 </div>
@@ -83,42 +85,47 @@
     </header>
     <!-- Preloader Start -->
     <main>
-    <div class=conatiner> 
-    <header><header class="page-header">
-    <h1 class="page-title" >     Request View</h1>
-</header>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col"> Category</th>
-        <th scope="col"> ID card</th>
-        <th scope="col">Education</th>
-        <th scope="col"> Status</th>
-        <th> </th>
+        <div class=container> 
+            <header class="page-header">
+            <h1 class="page-title" >     Request View</h1>
+            </header>
 
-      </tr>
-    </thead>
-    <tbody>
-       
-      <tr>
-        <th scope="row"></th>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Qualification</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Skills </th>
+                    <th scope="col">Applied Date</th>
+                    <th scope="col"> Status</th>
+                    <th> </th>
+                    <th> </th>
 
-       <td> <button href="{% url 'employer_home' %}" class="btn btn-Info">Accept</button></td>
-        <td><button href="{% url 'employer_home' %}" class="btn btn-warning">Reject</button></td>
-      </tr>
-       
-    </tbody>
+                </tr>
+                </thead>
+                
+                <tbody>
+                    {% for d in a %}
+                <tr>
+                    <th scope="row">{{ d.app_id }}</th>
+                    <td>{{ d.student_name }} </td>
+                    <td>{{ d.Qualification }} </td>
+                    <td> {{ d.email }}</td>
+                    <td> {{ d.Skills }}</td>
+                    <td> {{ d.Applied_date }}</td>
+                    <td>{{d.status}} </td>
+                    <td> <a href="/update_student_active/{{d.student_id}}" class="btn btn-Info">Hire</a></td>
+                    <td><a href="/update_student_reject/{{d.student_id}}" class="btn btn-warning">Reject</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                
+            </table>
     
-  </table>
-</div>
-</main>
+        </div>
+    </main>
   <footer>
     <!-- Footer Start-->
     <div class="footer-area footer-bg footer-padding">

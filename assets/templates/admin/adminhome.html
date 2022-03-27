@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -57,7 +58,7 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="{% url 'admin_home' %}">Home</a></li>
-                                            <li><a href="{% url 'admin_Request' %}">Employers</a></li>
+                                            <li><a href="{% url 'admin_Request' %}">Requests</a></li>
                                             <li> <a href=" {% url 'admin_Internships' %}">Internships</a></li>
                                             <li><a href="{% url 'admin_user' %}">Students</a></li>
                                         </ul>
@@ -87,20 +88,21 @@
             <header class="page-header">
                 <h1 class="page-title">     Dashboard</h1>
             </header>
-  
+            <center> 
             <div class="card text-white bg-light col-sm-3">
                 <div class="card-body">
                 <h4 class="card-title">Employes</h4>
                 <br>
                 <h6 class="card-subtitle mb-2 text-muted">Total Employes</h6>
                 <br><br>
-                <p class="card-text">10</p>
+                <h1 class="card-title">{{Employes}}</h1>
                 <br><br>
                 <a href="{% url 'admin_Employer' %}" class="btn btn-primary">View</a> 
                 <br><br>
                 </div>
             </div> 
-             
+        </center>
+            <center>
             
             <div class="card text-white bg-light col-sm-3" >
                 <div class="card-body">
@@ -108,37 +110,42 @@
                 <br>
                 <h6 class="card-subtitle mb-2 text-muted"> Pending Request</h6>
                 <br><br>
-                <p class="card-text"> 4</p>
+                <h1 class="card-title"> {{req}}</h1>
                 <br><br>
                 <a href="{% url 'admin_Request' %}" class="btn btn-primary">View</a> 
                 <br><br>
                 </div>  
             </div>
+        </center>
+            <center>
             <div class="card text-white bg-light col-sm-3" >
                 <div class="card-body">
                 <h4 class="card-title">Internships</h4>
                 <br>
                 <h6 class="card-subtitle mb-2 text-muted">Total Internships</h6>
                 <br><br>
-                <p class="card-text">30</p>
+                <h1 class="card-title">{{Internships}}</h1>
                 <br><br>
                 <a href="{% url 'admin_Internships' %}" class="btn btn-primary">View</a> 
                 <br><br>
                 </div>
-            </div> 
+            </div>
+        </center> 
+        <center>
             <div class="card text-white bg-light col-sm-3" >
                 <div class="card-body">
                 <h4 class="card-title">User </h4>
                 <br>
                 <h6 class="card-subtitle mb-2 text-muted">Total Users</h6>
                 <br><br>
-                <p class="card-text">50</p>
+                <h1 class="card-title">{{users}}</h1>
                 <br><br>
                 <a href="{% url 'admin_user' %}" class="btn btn-primary">View</a> 
                 <br><br>
                 </div>
             </div>
-        </div> 
+        </div>
+    </center> 
     </main>
     <br> 
     <br>

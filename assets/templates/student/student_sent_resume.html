@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}>
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -58,14 +59,15 @@
                                         <ul id="navigation">
                                             <li><a href="{% url 'student_home' %}">Home</a></li>
                                             <li><a href="{% url 'student_response' %}">Responses</a></li>
-                                            <li> <a href=" {% url 'student_internships' %}">Internships</a></li>
+                                            <li> <a href=" {% url 'internships_listing' %}">Internships</a></li>
                                             <li><a href="{% url 'student_saved' %}">Saved</a></li>
                                         </ul>
                                     </nav>
                                 </div>          
                                 <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="{% url 'index' %}" class="btn head-btn1">
+                                <div class="justify-content-evenly header-btn d-none f-right d-lg-block">
+                                   
+                                    <a href="{% url 'index' %}" class="btn head-btn2">
                                         Logout
                                     </a>
                                 </div>
@@ -289,159 +291,30 @@
                                 </div>
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="{% static 'img/icon/job-list1.png' %}" alt=""></a>
+                                {% for i in internships %}
+                                    <div class="single-job-items mb-30">
+                                        <div class="job-items">
+                                            <div class="company-img">
+                                                <a href="#"><img src="media/{{i.Profile_picture}}" height="64" width="64" alt=""></a>
+                                            </div>
+                                            <div class="job-tittle job-tittle2">
+                                                <a href="/internship_detail/{{i.internship_id}}">
+                                                    <h4>{{ i.Profile }}</h4>
+                                                </a>
+                                                <ul>
+                                                    <li>{{ i.Organization_name }}</li>
+                                                    <li><i class="fas fa-map-marker-alt"></i>{{ i.location }}</li>
+                                                    <li>{{ i.Stiepend }}</li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="{% url 'internships_details' %}">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
+                                        <div class="apply-btn2">
+                                            <a href="/update_student_active/{{i.student_id}}" class="btn">Status</a>
+                                            <span>{{ i.status }}</span>
+                                         </div>
+                                         
                                     </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href=""><img src="{% static 'img/icon/job-list2.png' %}" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="{% url 'internships_details' %}">
-                                                <h4>Web Designer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="{% static 'img/icon/job-list3.png' %}" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="{% url 'internships_details' %}">
-                                                <h4>Bussiness Process Executive</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="{% static 'img/icon/job-list4.png' %}" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="{% url 'internships_details' %}">
-                                                <h4> Full stack Developer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="{% static 'img/icon/job-list1.png' %}" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="{% url 'internships_details' %}">
-                                                <h4> Software Developer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="{% static 'img/icon/job-list3.png' %}" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="{% url 'internships_details' %}">
-                                                <h4> UI/UX Developer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="{% static 'img/icon/job-list4.png' %}" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="{% url 'internships_details' %}">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="{% url 'internships_details' %}">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </section>
                         <!-- Featured_job_end -->

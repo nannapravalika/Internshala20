@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -58,14 +59,15 @@
                                         <ul id="navigation">
                                             <li><a href="{% url 'student_home' %}">Home</a></li>
                                             <li><a href="{% url 'student_response' %}">Responses</a></li>
-                                            <li> <a href=" {% url 'student_internships' %}">Internships</a></li>
+                                            <li> <a href=" {% url 'internships_listing' %}">Internships</a></li>
                                             <li><a href="{% url 'student_saved' %}">Saved</a></li>
                                         </ul>
                                     </nav>
                                 </div>          
                                 <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="{% url 'index' %}" class="btn head-btn1">
+                                <div class="justify-content-evenly header-btn d-none f-right d-lg-block">
+                                    
+                                    <a href="{% url 'index' %}" class="btn head-btn2">
                                         Logout
                                     </a>
                                 </div>
@@ -87,30 +89,37 @@
         <header class="page-header">
             <h1 class="page-title" >Application Form</h1>
         </header>
-        <form method="post">
+        <form method="post"  enctype="multipart/form-data"  name="myform" onsubmit="return apply();">
             {% csrf_token %}
+            {% for message in messages %}
+            {% if messages %}
+            <script>
+                swal("Welcome!", "Registration Succesful!", "success");
+            </script>
+            {% endif %}
+            {% endfor %}
             <div class="row">
                 <div class="col-sm-3">
-                    <label for="validationServer01">First name</label>
-                    <input name="fname" type="text" class="form-control " id="validationServer01" placeholder="First name"    required>
+                    <label for="validationServer01">Name</label>
+                    <input name="fname" type="text" class="form-control " id="validationServer01" placeholder="Full name">
                     <div class="valid-feedback">
                     
                     </div>
                 </div>
                 
                 <div class="col-sm-3">
-                    <label for="validationServer02">Last name</label>
-                    <input name="lname" type="text" class="form-control" id="validationServer02" placeholder="Last name"   required>
+                    <label for="validationServer02">Email</label>
+                    <input name="email" type="text" class="form-control" id="validationServer02" placeholder="Email">
                     <div class="valid-feedback">
                     
                     </div>
                 </div>
                 <br> <br>
                 <div class="col-sm-3">
-                    <label value =" Highest Qualification">  Highest Qualification </label> 
+                    <label>  Highest Qualification </label> 
                     <br> 
                         <select name="qualification">  
-                        <option value =" Highest Qualification">    </option> 
+                        <option>Select One</option> 
                         <option value = " SSC">  SSC  </option>  
                         <option value = "Inter">  Inter   </option>  
                         <option value = "BE/BTech">BE/BTech </option>  
@@ -122,7 +131,7 @@
                 </div>
                 <div class="col-sm-2">
                     <label for="validationServer03">Percentage</label>
-                    <input name="percentage"type="text" class="form-control" id="validationServer03" placeholder="Percentage" required>
+                    <input name="percentage" type="text" class="form-control" id="validationServer03" placeholder="Percentage">
                     <div class="valid-feedback">
                     
                     </div>
@@ -135,7 +144,7 @@
             <div class="row"> 
                 <div class="col-sm-4">
                     <label for="validationServer05">City</label>
-                    <input name="City"type="text" class="form-control " id="validationServer05" placeholder="City" required>
+                    <input name="City" type="text" class="form-control " id="validationServer05" placeholder="City">
                     <div class="valid-feedback">
                     
                     </div>
@@ -143,7 +152,7 @@
                 
                 <div class="col-sm-4">
                     <label for="validationServer05">State</label>
-                    <input name="State"type="text" class="form-control  " id="validationServer05"  placeholder="State" required>
+                    <input name="State" type="text" class="form-control  " id="validationServer05"  placeholder="State">
                     <div class="valid-feedback">
 
                     </div>
@@ -151,12 +160,30 @@
                 
                 <div class="col-sm-2">
                     <label for="validationServer05">Postal Code</label>
-                    <input name="Pcode" type="text" class="form-control " id="validationServer05"placeholder="Postal Code" required>
+                    <input name="Pcode" type="text" class="form-control " id="validationServer05"placeholder="Postal Code">
                     <div class="valid-feedback">
                     
                     </div>
                 </div> 
             </div> 
+            <br>
+            <br>
+            <div class=col-sm-6>
+                <label for="validationServer05">Cover Letter (Optional)</label>
+                <textarea name="cover_letter" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+
+                <div class="valid-feedback">
+                
+                </div>
+            </div>
+            <div class=col-sm-6>
+                <label for="validationServer05">Skills</label>
+                <textarea name="skills" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+
+                <div class="valid-feedback">
+                
+                </div>
+            </div>
             <br>
             <br>
             <br>
@@ -171,7 +198,7 @@
             <br>
             <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="validCheck3" required>
+                <input class="form-check-input" name="checkbox" type="checkbox" value="" id="validCheck3">
                 <br>
                 <label class="form-check-label" for="ValidCheck3">
                 Agree to terms and conditions
@@ -347,6 +374,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Jquery Plugins, main Jquery -->	
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
     
 </body>
 </html>

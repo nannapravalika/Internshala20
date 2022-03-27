@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
+from django.contrib.messages import constants as messages
+from .emailsettings import SET_EMAIL_USE_TLS, SET_EMAIL_HOST, SET_EMAIL_HOST_USER, \
+    SET_EMAIL_HOST_PASSWORD, SET_EMAIL_PORT, SET_EMAIL_BACKEND, SET_DEFAULT_FROM_EMAIL
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     'userapp',
     'adminapp',
     'mainapp',
+     
 ]
 
 MIDDLEWARE = [
@@ -77,6 +83,22 @@ WSGI_APPLICATION = 'Internshala20.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME':  'internshala-20',
+#         'HOST': 'internshala-20.cc47cmyw1rnh.us-east-1.rds.amazonaws.com',
+#         'USER': 'nannapravalika',
+#         'PASSWORD':'nannapravalika',
+#         'PORT':'3306',
+#         'OPTIONS': {
+#         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#     }
+#     }
+# }
+
+
 
 DATABASES = {
     'default': {
@@ -127,7 +149,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'assets/static'),]
 
 # Default primary key field type
@@ -135,5 +157,23 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'assets/static'),]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL='media/'
-MEDIA_ROOT=[os.path.join(BASE_DIR,'media')]
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
+
+#EMAIL SETTING
+EMAIL_USE_TLS = SET_EMAIL_USE_TLS
+EMAIL_HOST = SET_EMAIL_HOST
+EMAIL_HOST_USER = SET_EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = SET_EMAIL_HOST_PASSWORD
+EMAIL_PORT = SET_EMAIL_PORT
+EMAIL_BACKEND = SET_EMAIL_BACKEND
+DEFAULT_FROM_EMAIL = SET_DEFAULT_FROM_EMAIL

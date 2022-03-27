@@ -40,12 +40,15 @@ urlpatterns = [
     path('student-home',user_views.Student_home,name='student_home'),
     path('student-form',user_views.Student_form,name='student_form'),
     path('student-internship',user_views.Student_internships,name='student_internships'),
-    path('student-saved',user_views.Student_saved,name='student_saved'),
+    path('student_saved',user_views.Student_saved,name='student_saved'),
+    # path('student_saved',user_views.view_saved,name='student_saved'),
+    # path('saved/<int:id>',user_views.internship_listing,name='saved'),
+    
     path('student-resume',user_views.Student_sent_resume,name='student_sent_resume'),
     path('student-response',user_views.Student_response,name='student_response'),
     path('internships-listing',user_views.internship_listing,name='internships_listing'),
-    path('internship-details',user_views.internship_details,name='internships_details'),
-    
+    path('save/<int:id>',user_views.save,name='save'),
+    path('internship_detail/<int:id>',user_views.internship_details,name='internship_detail'),
     
     
     #employe
@@ -57,7 +60,11 @@ urlpatterns = [
     path('emp-req-view',employer_views.Employer_Request,name='employer_Request'),
     path('employe-post',employer_views.Employer_Post,name='employer_Post'),
     path('emp-internships',employer_views.Employer_Internships,name='employer_Internships'),
+    path('update_student_active/<int:id>',employer_views.update_student_active,name='update_student_active'),
+    path('update_student_reject/<int:id>',employer_views.update_student_reject,name='update_student_reject'),
     
+     
+ 
     #admin
     
     path('admin-login',main_views.adminlogin,name='adminlogin'),
@@ -66,6 +73,8 @@ urlpatterns = [
     path('admin-req-view',admin_views.Admin_Request,name='admin_Request'),
     path('admin-internships',admin_views.Admin_Internships,name='admin_Internships'),
     path('admin-user-view',admin_views.Admin_user,name='admin_user'),
+    path('update_employe_active/<int:id>',admin_views.update_employe_active,name='update_employe_active'),
+    path('update_employe_reject/<int:id>',admin_views.update_employe_reject,name='update_employe_reject'),
     
 ]
 

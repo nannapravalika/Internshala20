@@ -4,11 +4,13 @@ from django.shortcuts import redirect, render
 from adminapp.views import Admin_home
 from employerapp.views import Employer_home
 from userapp.views import Student_home
+from employerapp.models import EmployePostModel
 
 # Create your views here.
 
 def index(request):
-    return render(request,'index.html')
+     
+    return render(request,'index.html' )
 
 def about(request):
     return render(request,'about.html')

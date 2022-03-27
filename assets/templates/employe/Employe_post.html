@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -64,8 +65,11 @@
                                     </nav>
                                 </div>          
                                 <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="{% url 'index' %}" class="btn head-btn1">Logout</a>
+                                <div class="justify-content-evenly header-btn d-none f-right d-lg-block">
+                                   
+                                    <a href="{% url 'index' %}" class="btn head-btn2">
+                                        Logout
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -84,12 +88,19 @@
             <header class="page-header">
                 <h1 class="page-title" > Post Internship</h1>
             </header>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data" name="myform" onsubmit="return post();">
                 {% csrf_token %}
+                {% for message in messages %}
+                {% if messages %}
+                <script>
+                    swal("Succesfully Uploaded Your Post", "success");
+                </script>
+                {% endif %}
+                {% endfor %}
                 <div class="row">
                     <div class="col-sm-3">
                         <label for="validationServer01">Organization name</label>
-                        <input name="org_name" type="text" class="form-control " id="validationServer01" placeholder="Organization name"    required>
+                        <input name="org_name" type="text" class="form-control " id="validationServer01" placeholder="Organization name" >
                         <div class="valid-feedback">
                         
                         </div>
@@ -97,7 +108,7 @@
                     
                     <div class="col-sm-3">
                         <label for="validationServer01">Organization Email</label>
-                        <input name="email" type="text" class="form-control " id="validationServer01" placeholder="Organization name"    required>
+                        <input name="email" type="text" class="form-control " id="validationServer01" placeholder="Organization  Email">
                         <div class="valid-feedback">
                         
                         </div>
@@ -105,7 +116,27 @@
 
                     <div class="col-sm-3">
                         <label for="validationServer01">Organization Website</label>
-                        <input name="website" type="text" class="form-control " id="validationServer01" placeholder="Organization name"    required>
+                        <input name="website" type="text" class="form-control " id="validationServer01" placeholder="Organization Website">
+                        <div class="valid-feedback">
+                        
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="validationServer01"> Year of establishment</label>
+                        <input name="Year" type="text" class="form-control " id="validationServer01" placeholder="Year of establishment">
+                        <div class="valid-feedback">
+                        
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col-sm-3">
+                        <label for="validationServer01"> Pan Card </label>
+                        <input name="Pan" type="text" class="form-control " id="validationServer01" placeholder="Pan Card ">
                         <div class="valid-feedback">
                         
                         </div>
@@ -113,21 +144,18 @@
 
                     <div class="col-sm-3">
                         <label for="validationServer02">Location</label>
-                        <input name="location" type="text" class="form-control" id="validationServer02" placeholder="Location"   required>
+                        <input name="location" type="text" class="form-control" id="validationServer02" placeholder="Location">
                         <div class="valid-feedback">
                         
                        </div>
                     </div>
-                    <br> <br>
-                    <br>
-                    <br>
-                    <br>
+                     
                     <div class="col-sm-3">
-                        <label value ="Profile">  Profile </label> 
+                        <label>Profile </label> 
                         <br> 
                         
                             <select name="profile">
-                            <option value ="Profile">  Profile </option>   
+                            <option>Profile</option>   
                             <option value ="Design and creative">   Design and Creative </option> 
                             <option value = "Design and Development">  Design and Development  </option>  
                             <option value = "Sales and Marketing"> Sales and Marketing  </option>  
@@ -139,11 +167,11 @@
                             </select>
                     </div>
                     <div class="col-sm-2">
-                        <label value ="Internship Type">  Internship Type </label> 
+                        <label>  Internship Type </label> 
                         <br> 
                         
                             <select name="internship_type">
-                            <option value ="Internship Type">   Internship Type</option>   
+                            <option>Internship Type</option>   
                             <option value ="Regular">   Regular </option> 
                             <option value = "Work From Home">   Work From Home  </option>  
                             <option value = "Full Time"> Full Time  </option>  
@@ -154,11 +182,11 @@
                 <br>
                 <br>
                 <br>
-                <br>
+                 
                 <div class="row"> 
                     <div class="col-sm-3">
                         <label for="validationServer05">No of openings</label>
-                        <input name="openings" type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <input name="openings" type="text" class="form-control " id="validationServer05" placeholder="Openings">
                         <div class="valid-feedback">
                         
                         </div>
@@ -166,18 +194,18 @@
                     
                     <div class="col-sm-3">
                         <label for="validationServer05">Start Date</label>
-                        <input name="start_date" type="text" class="form-control  " id="validationServer05"  placeholder="Start Date" required>
+                        <input name="start_date" type="text" class="form-control  " id="validationServer05"  placeholder="Start Date">
                         <div class="valid-feedback">
     
                         </div>
                     </div>
                     
                     <div class="col-sm-3">
-                        <label value ="Duration">  Duration</label> 
+                        <label >  Duration</label> 
                         <br> 
                         
                             <select name="duration">
-                            <option value =" Duration"> Duration</option>   
+                            <option>Duration</option>   
                             <option value ="4 weeks ">4 weeks </option> 
                             <option value = "8 weeks ">8 weeks </option>  
                             <option value = "16 weeks ">12 weeks </option>  
@@ -206,14 +234,16 @@
                 <div class=row>
                     <div class=col-sm-6>
                         <label for="validationServer05">Skills</label>
-                        <input name="skills" type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <textarea name="skills" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        
                         <div class="valid-feedback">
                         
                         </div>
                     </div>
                     <div class=col-sm-6>
                         <label for="validationServer05">Description</label>
-                        <input name="description" type="text" class="form-control " id="validationServer05" placeholder="Openings" required>
+                        <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+
                         <div class="valid-feedback">
                         
                         </div>
@@ -225,7 +255,7 @@
                 <br>
                 <div class="col-md-6 mb-5">
                     <label for="formFile" class="form-label">Profile Photo</label>
-                    <input name="pic" class="form-control" type="file" id="formFile">
+                    <input name="Profile_picture" class="form-control" type="file" id="formFile" >
                 </div>
                 <br>  
                 <br> 
@@ -234,7 +264,7 @@
                 <br>
                 <div class="form-group">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="validCheck3" required>
+                    <input class="form-check-input" name='checkbox' type="checkbox" value="" id="validCheck3">
                     <br>
                     <label class="form-check-label" for="ValidCheck3">
                     Agree to terms and conditions
@@ -410,6 +440,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Jquery Plugins, main Jquery -->	
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
     
 </body>
 </html>

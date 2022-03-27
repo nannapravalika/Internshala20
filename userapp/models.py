@@ -1,4 +1,5 @@
 from abc import update_abstractmethods
+from cgi import print_environ
 from datetime import date, datetime
 from turtle import update
 from xmlrpc.client import DateTime
@@ -19,19 +20,35 @@ class StudentRegModel(models.Model):
         db_table='student_details'
     
 class StudentApplyModel(models.Model):
+    student_id = models.IntegerField(null=True)
     app_id=models.AutoField(primary_key=True)
-    fname=models.CharField(max_length=100)
-    lname=models.CharField(max_length=100)
+    student_name=models.CharField(max_length=100)
     Qualification=models.CharField(max_length=100)
     Percentage=models.CharField(max_length=100)
     City=models.CharField(max_length=100)
     State=models.CharField(max_length=100)
     Pcode=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    Skills=models.TextField(null=True)
+    CoverLetter=models.TextField(null=True)
     Resume=models.ImageField(upload_to='images/',null=True)
+    status = models.CharField(max_length=100,default='pending')
     Applied_date=models.DateField(auto_now_add=True)
     
     def __str__(self):
-        return self.fname +  " " + self.lname
+        return self.student_name
      
     class Meta:
         db_table='applied_details'
+        
+class StudentSavedModel(models.Model):
+    save_id = models.AutoField(primary_key=True)
+    student_id = models.IntegerField(null=True) 
+    internship_id = models.IntegerField(null=True)
+    save_date = models.DateField(auto_now_add=True,null=True)
+    
+    def __str__(self):
+        return str(self.internship_id)
+
+    class Meta:
+        db_table='Saved_details' 

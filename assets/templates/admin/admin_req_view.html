@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <main>
@@ -57,7 +58,7 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="{% url 'admin_home' %}">Home</a></li>
-                                            <li><a href="{% url 'admin_Request' %}">Employers</a></li>
+                                            <li><a href="{% url 'admin_Request' %}">Request</a></li>
                                             <li> <a href=" {% url 'admin_Internships' %}">Internships</a></li>
                                             <li><a href="{% url 'admin_user' %}">Students</a></li>
                                         </ul>
@@ -84,37 +85,44 @@
     <!-- Preloader Start -->
     <main> 
     <div class=container> 
-    <header class="page-header">
-    <h1 class="page-title" >     Request View</h1>
-    </header>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Company Name</th>
-        <th scope="col">Year of Establisment</th>
-        <th scope="col">PAN Card number</th>
-        <th scope="col">Status</th>
-        <th> </th>
-
-      </tr>
-    </thead>
-    <tbody>
+        <div class="row"> 
+        <header class="page-header">
+        <h1 class="page-title" >     Request View</h1>
+        </header>
+        
        
-      <tr>
-        <th scope="row"></th>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-       <td> <button href="{% url 'admin_home' %}" class="btn btn-Info">Accept</button></td>
-        <td><button href="{% url 'admin_home' %}" class="btn btn-warning">Reject</button></td>
-      </tr>
-       
-    </tbody>
-    
-  </table>
-</div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Company Name</th>
+                <th scope="col">Year of Establisment</th>
+                <th scope="col">PAN Card number</th>
+                <th scope="col">Status</th>
+                <th> </th>
+            </tr>
+            </thead>
+            {% for r in Req %}
+            <tbody>
+            
+            <tr>
+                <th scope="row">{{ r.internship_id }} </th>
+                <td>{{ r.Organization_name }}</td>
+                <td>{{ r.Year_of_establishment }} </td>
+                <td>{{ r.Pan }} </td>
+                <td>{{ r.emp_status }}</td>
+                
+            <td> <a href="/update_employe_active/{{r.internship_id}}" class="btn btn-Info">Accept</a> 
+                 <a href="/update_employe_reject/{{r.internship_id}}" class="btn btn-warning">Reject</a></td>
+            </tr>
+            
+            </tbody>
+            {% endfor %}
+        </table>
+        
+         
+    </div>
+    </div>
 </main>
   <footer>
     <!-- Footer Start-->

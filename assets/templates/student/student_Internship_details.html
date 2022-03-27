@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -58,14 +59,17 @@
                                         <ul id="navigation">
                                             <li><a href="{% url 'student_home' %}">Home</a></li>
                                             <li><a href="{% url 'student_response' %}">Responses</a></li>
-                                            <li> <a href=" {% url 'student_internships' %}">Internships</a></li>
+                                            <li> <a href="{% url 'internships_listing' %}">Internships</a></li>
                                             <li><a href="{% url 'student_saved' %}">Saved</a></li>
                                         </ul>
                                     </nav>
                                 </div>          
                                 <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="{% url 'index' %}" class="btn head-btn1">Logout</a>
+                                <div class="justify-content-evenly header-btn d-none f-right d-lg-block">
+                                    
+                                    <a href="{% url 'index' %}" class="btn head-btn2">
+                                        Logout
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -98,27 +102,27 @@
         </div>
         <!-- Hero Area End -->
         <!-- job post company Start -->
-        
         <div class="job-post-company pt-120 pb-120">
             <div class="container">
                 <div class="row justify-content-between">
                     <!-- Left Content -->
-                    {% for D in Details %}
+                    {% for d in D %}
+                   
                     <div class="col-xl-7 col-lg-8">
                         <!-- job single -->
                         <div class="single-job-items mb-50">
                             <div class="job-items">
                                 <div class="company-img company-img-details">
-                                    <a href="#"><img src="{% static 'img/icon/job-list1.png' %}" alt=""></a>
+                                    <a href="#"><img src="/media/{{d.Profile_picture}}" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
                                     <a href="#">
-                                        <h4>{{ D.Profile }}</h4>
+                                        <h4>{{ d.Profile }}</h4>
                                     </a>
                                     <ul>
-                                        <li>{{ D.Organization_name }}</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>{{ D.location }}</li>
-                                        <li>{{ D.Stiepend }}</li>
+                                        <li>{{ d.Organization_name }}</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{ d.location }}</li>
+                                        <li>{{ d.Stiepend }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -131,7 +135,7 @@
                                 <div class="small-section-tittle">
                                     <h4>Job Description</h4>
                                 </div>
-                                <p>{{ D.Description }}</p>
+                                <p>{{ d.Description }}</p>
                             </div>
                             <div class="post-details2  mb-50">
                                  <!-- Small Section Tittle -->
@@ -139,7 +143,7 @@
                                     <h4>Required Knowledge, Skills, and Abilities</h4>
                                 </div>
                                <ul>
-                                   <li>{{ D.Skills }}</li>
+                                   <li>{{ d.Skills }}</li>
                                </ul>
                             </div>
                         </div>
@@ -153,15 +157,21 @@
                                <h4>Internship Overview</h4>
                            </div>
                           <ul>
-                              <li>Posted date : <span>{{ D.Posted_date }}</span></li>
-                              <li>Location : <span>{{ D.location }}</span></li>
-                              <li>Vacancy : <span>{{ D.No_of_openings }}</span></li>
-                              <li>Internship nature : <span>{{ D.Internship_type }}</span></li>
-                              <li>Stiepend :  <span>{{ D.Stiepend }}</span></li>
-                              <li>Application date : <span>{{ D.Start_Date }}</span></li>
+                              <li>Posted date : <span>{{ d.Posted_date }}</span></li>
+                              <li>Location : <span>{{ d.location }}</span></li>
+                              <li>Vacancy : <span>{{ d.No_of_openings }}</span></li>
+                              <li>Internship nature : <span>{{ d.Internship_type }}</span></li>
+                              <li>Stiepend :  <span>{{ d.Stiepend }}</span></li>
+                              <li>Application date : <span>{{ d.Start_Date }}</span></li>
                           </ul>
+                         <div class="items-link items-link2 f-right">
+                            <a href="{% url 'student_saved' %}" class="btn">Save</a>
+                         </div>
+                         <br>
+                         <br>
                          <div class="apply-btn2">
-                            <a href="{% url 'studentlogin' %}" class="btn">Apply Now</a>
+                            <a href="{% url 'student_sent_resume' %}" class="btn">Apply</a>
+                            <span>{{ d.Posted_date }}</span>
                          </div>
                        </div>
                         <div class="post-details4  mb-50">
@@ -169,12 +179,12 @@
                            <div class="small-section-tittle">
                                <h4>Company Information</h4>
                            </div>
-                              <span>{{ D.Organization_name }}</span>
+                              <span>{{ d.Organization_name }}</span>
                         
                             <ul>
-                                <li>Name: <span>{{ D.Organization_name }}</span></li>
-                                <li>Web : <span>{{ D.Organization_name }}</span></li>
-                                <li>Email: <span>{{ D.Organization_name }}</span></li>
+                                <li>Name: <span>{{ d.Organization_name }}</span></li>
+                                <li>Web : <span>{{ d.Organization_name }}</span></li>
+                                <li>Email: <span>{{ d.Organization_name }}</span></li>
                             </ul>
                        </div>
                     </div>

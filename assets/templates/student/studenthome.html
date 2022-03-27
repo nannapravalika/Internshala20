@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
 
    <body>
@@ -58,15 +59,18 @@
                                         <ul id="navigation">
                                             <li><a href="{% url 'student_home' %}">Home</a></li>
                                             <li><a href="{% url 'student_response' %}">Responses</a></li>
-                                            <li> <a href=" {% url 'student_internships' %}">Internships</a></li>
+                                            <li> <a href=" {% url 'internships_listing' %}">Internships</a></li>
                                             <li><a href="{% url 'student_saved' %}">Saved</a></li>
                                         </ul>
                                     </nav>
                                 </div>          
                                 <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="{% url 'index' %}" class="btn head-btn1">Logout</a>
+                                <div class="justify-content-evenly header-btn d-none f-right d-lg-block">
                                      
+                                     
+                                    <a href="{% url 'index' %}" class="btn head-btn2">
+                                        Logout
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -102,54 +106,48 @@
                         <header class="page-header">
                             <h1 class="page-title">     Dashboard</h1>
                         </header>
-                      
-                            <div class="card text-white bg-light col-sm-3">
+                             
+                        <center>
+                            <div class="card text-white bg-light col-sm-4" >
                                 <div class="card-body">
-                                <h4 class="card-title">Viewed Internships</h4>
+                                <h4 class="card-title">Applied Internships</h4>
                                 <br>
                                 <br><br>
-                                <p class="card-text">10</p>
-                                <br><br>
-                                <a href="{% url 'student_internships' %}" class="btn btn-primary">View</a> 
-                                <br><br>
-                                </div>
-                            </div> 
-                            
-                            
-                            <div class="card text-white bg-light col-sm-3" >
-                                <div class="card-body">
-                                <h4 class="card-title">Sent Resume </h4>
-                                <br>
-                                <br><br>
-                                <p class="card-text"> 4</p>
+                                <h1 class="card-title">{{Applied}}</h1>
                                 <br><br>
                                 <a href="{% url 'student_sent_resume' %}" class="btn btn-primary">View</a> 
                                 <br><br>
                                 </div>  
                             </div>
-                            <div class="card text-white bg-light col-sm-3" >
+                        </center>
+                            <center>
+                            <div class="card text-white bg-light col-sm-4" >
                                 <div class="card-body">
                                 <h4 class="card-title"> Responses</h4>
                                 <br>
                                 <br><br>
-                                <p class="card-text">30</p>
+                                <h1 class="card-title"> {{total}}</h1>
                                 <br><br>
                                 <a href="{% url 'student_response' %}" class="btn btn-primary">View</a> 
                                 <br><br>
                                 </div>
-                            </div> 
-                            <div class="card text-white bg-light col-sm-3" >
+                            </div>
+                        </center>
+                            <center> 
+                            <div class="card text-white bg-light col-sm-4" >
                                 <div class="card-body">
                                 <h4 class="card-title">Saved Internships </h4>
                                 <br>
                                 <br><br>
-                                <p class="card-text">50</p>
+                                <h1 class="card-title"> {{Saved}}</h1>
                                 <br><br>
                                 <a href="{% url 'student_saved' %}" class="btn btn-primary">View</a> 
                                 <br><br>
                                 </div>
                             </div>
-                        </div> 
+                        </center>
+                        </div>
+
                      
                 </main>
                 <br>
