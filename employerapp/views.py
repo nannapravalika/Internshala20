@@ -32,13 +32,16 @@ def employerlogin(request):
 
 
 def Employer_reg(request):
-    if request.method=="POST":
+    if request.method=="POST" and request.FILES['panpic']:
+        print("post")
         fname=request.POST.get('fname')
         lname=request.POST.get('lname')
         email=request.POST.get('email')
+        pan=request.POST.get('pan')
+        panpic=request.FILES['panpic']
         password=request.POST.get('password')
-        
-        EmployerRegModel.objects.create(first_name=fname,last_name=lname,email=email,password=password)
+        print("ok")
+        EmployerRegModel.objects.create(first_name=fname,last_name=lname,email=email,password=password,pan=pan,panpic=panpic)
         messages.success(request, "Message sent." )
     return render(request,'employe/Employereg.html')
 
@@ -96,7 +99,7 @@ def update_student_reject(request,id):
 
 def Employer_Post(request):
     emp_id=request.session["emp_id"]
-    if request.method == 'POST'and request.FILES ['image'] :
+    if request.method == 'POST'and request.FILES ['Profile_picture'] :
         Organization_name= request.POST.get('org_name')
         email= request.POST.get('email')
         website= request.POST.get('website')

@@ -12,6 +12,8 @@ class EmployerRegModel(models.Model):
     first_name=models.CharField(max_length=100,help_text='Enter First name')
     last_name=models.CharField(max_length=100,help_text='Enter Last name')
     email=models.EmailField(max_length=100,help_text='Enter First name')
+    pan=models.CharField(max_length=100,null=True)
+    panpic=models.ImageField(upload_to='images/',null=True)
     password=models.CharField(max_length=100,help_text='Enter Password')
     
     def __str__(self):

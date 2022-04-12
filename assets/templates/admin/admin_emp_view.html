@@ -94,14 +94,10 @@
     <thead>
       <tr>
         <th scope="col">Id</th>
-        <th scope="col">Company Name</th>
-        <th scope="col">Year of Establisment</th>
+        <th scope="col">Employer Name</th>
         <th scope="col">PAN Card number</th>
         <th scope="col"> Email</th>
-        <th scope="col">Company websie</th>
         <th scope="col">  No of openings</th>
-        <th scope="col"> Minimun Stiepend</th>
-        
         
 
 
@@ -112,13 +108,10 @@
        
       <tr>
         <th scope="row">{{ e.employer_id }}</th>
-        <td>{{ e.Organization_name }}</td>
-        <td>{{ e.Year_of_establishment }}  </td>
-        <td>{{ e.Pan }}</td>
+        <td>{{ e.first_name }}{{e.last_name}}</td>
+        <td>{{ e.pan }}</td>
         <td>{{ e.email }}</td>
-        <td>{{ e.website }}</td>
         <td>{{ internshipcount }}</td>
-        <td>{{ e.Stiepend }}</td>
       </tr>
        
     </tbody>

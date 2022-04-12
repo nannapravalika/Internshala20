@@ -4,6 +4,7 @@ from datetime import date, datetime
 from turtle import update
 from xmlrpc.client import DateTime
 from django.db import models
+from employerapp.models import EmployePostModel
 
 # Create your models here.
 class StudentRegModel(models.Model):
@@ -22,6 +23,7 @@ class StudentRegModel(models.Model):
 class StudentApplyModel(models.Model):
     student_id = models.IntegerField(null=True)
     app_id=models.AutoField(primary_key=True)
+    internship=models.ForeignKey(EmployePostModel,db_column="internship_id",null=True,on_delete=models.SET_NULL,related_name='internship')
     student_name=models.CharField(max_length=100)
     Qualification=models.CharField(max_length=100)
     Percentage=models.CharField(max_length=100)
@@ -44,7 +46,7 @@ class StudentApplyModel(models.Model):
 class StudentSavedModel(models.Model):
     save_id = models.AutoField(primary_key=True)
     student_id = models.IntegerField(null=True) 
-    internship_id = models.IntegerField(null=True)
+    internship= models.ForeignKey(EmployePostModel,db_column="internship", on_delete=models.SET_NULL,null=True, related_name="intern")
     save_date = models.DateField(auto_now_add=True,null=True)
     
     def __str__(self):

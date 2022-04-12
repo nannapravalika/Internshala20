@@ -6,11 +6,22 @@ from employerapp.views import Employer_home
 from userapp.views import Student_home
 from employerapp.models import EmployePostModel
 
+
 # Create your views here.
 
 def index(request):
-     
-    return render(request,'index.html' )
+    Design_and_Creative=EmployePostModel.objects.filter(Profile="Design and Creative").count()
+    Design_and_Development=EmployePostModel.objects.filter(Profile="Design and Development").count()
+    Sales_and_Marketing=EmployePostModel.objects.filter(Profile="Sales and Marketing").count()
+    Mobile_Application=EmployePostModel.objects.filter(Profile="Mobile Application").count()
+    Construction=EmployePostModel.objects.filter(Profile="Construction").count()
+    Information_Technology=EmployePostModel.objects.filter(Profile="Information Technology").count()
+    bpo=EmployePostModel.objects.filter(Profile="BPO").count()
+    Content_Writer=EmployePostModel.objects.filter(Profile="Content Writer").count()
+    
+    
+    
+    return render(request,'index.html',{'Design_and_Creative':Design_and_Creative,'Design_and_Development':Design_and_Development,'Sales_and_Marketing':Sales_and_Marketing,'Mobile_Application':Mobile_Application,'Construction':Construction,'Information_Technology':Information_Technology,'bpo':bpo,'Content_Writer':Content_Writer} )
 
 def about(request):
     return render(request,'about.html')

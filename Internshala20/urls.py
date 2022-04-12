@@ -45,9 +45,10 @@ urlpatterns = [
     # path('saved/<int:id>',user_views.internship_listing,name='saved'),
     
     path('student-resume',user_views.Student_sent_resume,name='student_sent_resume'),
-    path('student-response',user_views.Student_response,name='student_response'),
+    path('student-profile',user_views.Student_response,name='student_response'),
     path('internships-listing',user_views.internship_listing,name='internships_listing'),
     path('save/<int:id>',user_views.save,name='save'),
+    path('apply/<int:id>',user_views.apply_internship,name="apply_internship"),
     path('internship_detail/<int:id>',user_views.internship_details,name='internship_detail'),
     
     

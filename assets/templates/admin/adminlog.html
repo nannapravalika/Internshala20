@@ -67,7 +67,7 @@
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
                                     <a href="{% url 'studentlogin' %}" class="btn head-btn2">Student</a>
-                                    <a href="{% url 'employerlogin' %}" class="btn head-btn2">Employe</a>
+                                    <a href="{% url 'employerlogin' %}" class="btn head-btn2">Employer</a>
                                     <a href="{% url 'adminlogin' %}" class="btn head-btn2">Admin</a>
                                 </div>
                             </div>
@@ -83,55 +83,59 @@
         <!-- Header End -->
     </header>
     <!-- Preloader Start -->
-    <header><div class="row">
-			
-    <!-- Article main content -->
-    <article class="col-xs-12 maincontent">
-        <header class="page-header">
-            <h1 class="page-title">     Admin Login</h1>
-        </header>
-        
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3 class="thin text-center"> Login</h3>
-                     
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="top-margin">
-                            <label>Username<span class="text-danger">*</span></label>
-                            <input  type="text" name="Username" class="form-control">
-                        </div>
-                         <br>
-                         <br>
-                        <div class="row top-margin">
-                            <div class="col-sm-6">
-                                <label>Password<span class="text-danger">*</span></label>
-                                <input type="password" name="Password" class="form-control">
-                            </div>
-                        </div>
-                         <br>
-                         <br>
+     <main>
+        <div class="container"> 	
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title">     Admin Login</h1>
+                </header>
+                
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h3 class="thin text-center"> Login</h3>
+                            
+                            <form method="post" >
+                                {% csrf_token %}
 
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <label class="checkbox">
-                                    <input type="checkbox"> 
-                                    I've read the <a style="color: blue;"href="page_terms.html">Terms and Conditions</a>
-                                </label>                        
-                            </div>
-                            <div class="col-lg-4 text-right">
-                                <button class="btn btn-action" type="submit">Login</button>
-                            </div>
+                                <div class="top-margin">
+                                    <label>Username<span class="text-danger">*</span></label>
+                                    <input type="text" name='Username' class="form-control">
+                                </div>
+                                <br>
+                                <br>
+                                <div class="top-margin">
+                                    
+                                        <label>Password <span class="text-danger">*</span></label>
+                                        <input type="password" name='Password' class="form-control">
+                                    
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <a style="color: blue;" href="{% url 'employer_reg' %}">New user Register here?</a>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> 
+                                            I've read the <a style="color: blue;" href="page_terms.html">Terms and Conditions</a>
+                                        </label>                        
+                                    </div>
+                                    <div class="col-lg-4 text-right">
+                                        <button class="btn btn-action" type="submit">Login</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
+
                 </div>
-            </div>
-
-        </div>
-        
-    </article>
-    <!-- /Article -->
+                
+            </article>
+            <!-- /Article -->
+        </div>    
+    </main>    
 
 </div>
 <footer>

@@ -60,9 +60,9 @@
                                         <nav class="d-none d-lg-block">
                                             <ul id="navigation">
                                                 <li><a href="{% url 'student_home' %}">Home</a></li>
-                                                <li><a href="{% url 'student_response' %}">Responses</a></li>
-                                                <li><a href="{% url 'internships_listing' %}">Internships</a></li>
-                                                <li><a href="{% url 'student_saved' %}">Saved</a></li>
+                                            <li> <a href="{% url 'internships_listing' %}">Internships</a></li>
+                                            <li><a href="{% url 'student_saved' %}">Saved</a></li>
+                                            <li><a href="{% url 'student_response' %}" ><i class="fab fas fa-user-circle"></i>  My Profile</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -86,10 +86,10 @@
             <!-- Header End -->
         </header>
         <main>
-
+            
 
             <!-- Hero Area Start-->
-            <div class="slider-area">
+            {% comment %} <div class="slider-area">
                 <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{% static 'img/hero/about.jpg' %}">
                     <div class="container">
                         <div class="row">
@@ -102,7 +102,20 @@
                     </div>
                 </div>
             </div>
+            <br> {% endcomment %}
             <!-- Hero Area End -->
+            <br>
+            <br>
+            <br>
+            <br>
+        <div class="container">
+            <div class="col-sm-6">
+            <form class="d-none d-md-flex ms-4" name="form" method="post" >
+                {% csrf_token %}
+                <input class="form-control border-1 " name="search" type="search" placeholder="Search">
+                <button type="submit" name="searchbtn" class="btn-info "><i class="fas fa-search"></i></button>
+              </form>
+            </div>
             <!-- Job List Area Start -->
             <div class="job-listing-area pt-120 pb-120">
                 <div class="container">
@@ -135,6 +148,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <form name="myform" method="post">
+                                    {% csrf_token %}
                                 <!-- Job Category Listing start -->
                                 <div class="job-category-listing mb-50">
                                     <!-- single one -->
@@ -144,17 +159,49 @@
                                         </div>
                                         <!-- Select job items start -->
                                         <div class="select-job-items2">
-                                            <select name="select">
-                                                <option value="">All Category</option>
-                                                <option value="">Category 1</option>
-                                                <option value="">Category 2</option>
-                                                <option value="">Category 3</option>
-                                                <option value="">Category 4</option>
+                                            <select name="profile">
+                                                <option>All Category</option>
+                                                <option>Design and Creative</option>
+                                                <option>Design and Development</option>
+                                                <option>Sales and Marketing</option>
+                                                <option>Mobile Application</option>
+                                                <option>Construction</option>
+                                                <option>Information Technology</option>
+                                                <option>BPO</option>
+                                                <option>Content Writer</option>
+
                                             </select>
                                         </div>
+                                        <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
                                         <!--  Select job items End-->
                                         <!-- select-Categories start -->
-                                        <div class="select-Categories pt-80
+                                        <div class="single-listing">
+                                            <div class="small-section-tittle2">
+                                                <h4>Internship Type</h4>
+                                            </div>
+                                            <!-- Select job items start -->
+                                            <div class="select-job-items2">
+                                                <select name="internship_type">
+                                                    <option value="">Anywhere</option>
+                                                    <option value="Regular">Regular</option>
+                                                    <option value="Work From Home">Work From Home</option>
+                                                    <option value="Full Time">Full Time</option>
+                                                    <option value="Part Time">Part Time</option>
+                                                </select>
+                                            </div>
+                                            <!--  Select job items End-->
+                                            
+                                        </div>
+                                        <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                        {% comment %} <div class="select-Categories pt-80
                                             pb-50">
                                             <div class="small-section-tittle2">
                                                 <h4>Internship Type</h4>
@@ -176,7 +223,7 @@
                                                 <input type="checkbox">
                                                 <span class="checkmark"></span>
                                             </label>
-                                        </div>
+                                        </div> {% endcomment %}
                                         <!-- select-Categories End -->
                                     </div>
                                     <!-- single two -->
@@ -186,43 +233,45 @@
                                         </div>
                                         <!-- Select job items start -->
                                         <div class="select-job-items2">
-                                            <select name="select">
+                                            <select name="location">
                                                 <option value="">Anywhere</option>
-                                                <option value="">Category 1</option>
-                                                <option value="">Category 2</option>
-                                                <option value="">Category 3</option>
-                                                <option value="">Category 4</option>
+                                                <option value="Hyderabad">Hyderabad</option>
+                                                <option value="Bangolore">Bangolore</option>
+                                                <option value="Chennai">Chennai</option>
+                                                <option value="Pune">Pune</option>
                                             </select>
                                         </div>
                                         <!--  Select job items End-->
-                                        <!-- select-Categories start -->
-                                        <div class="select-Categories pt-80
-                                            pb-50">
-                                            <div class="small-section-tittle2">
-                                                <h4>Experience</h4>
-                                            </div>
-                                            <label class="container">1-2 Years
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">2-3 Years
-                                                <input type="checkbox"
-                                                    checked="checked active">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">3-6 Years
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">6-more..
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <!-- select-Categories End -->
+                                        
                                     </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
                                     <!-- single three -->
                                     <div class="single-listing">
+                                        <div class="small-section-tittle2">
+                                            <h4>Posted Within</h4>
+                                        </div>
+                                        <!-- Select job items start -->
+                                        <div class="select-job-items2">
+                                            <select name="posted_date">
+                                                <option value="">Any</option>
+                                                <option value="Today">Today</option>
+                                                <option value="Last 2 days">Last 2 days</option>
+                                                <option value="Last 5 days">Last 5 days</option>
+                                                <option value="Last 10 days">Last 10 days</option>
+                                            </select>
+                                        </div>
+                                        <!--  Select job items End-->
+                                        
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    
+                                    {% comment %} <div class="single-listing">
                                         <!-- select-Categories start -->
                                         <div class="select-Categories pb-50">
                                             <div class="small-section-tittle2">
@@ -256,47 +305,11 @@
                                             </label>
                                         </div>
                                         <!-- select-Categories End -->
-                                    </div>
-                                    <div class="single-listing">
-                                        <!-- Range Slider Start -->
-                                        <aside class="left_widgets
-                                            p_filter_widgets price_rangs_aside
-                                            sidebar_box_shadow">
-                                            <div class="small-section-tittle2">
-                                                <h4>Filter Internship</h4>
-                                            </div>
-                                            <div class="widgets_inner">
-                                                <div class="range_item">
-                                                    <!-- <div id="slider-range"></div> -->
-                                                    <input type="text"
-                                                        class="js-range-slider"
-                                                        value="" />
-                                                    <div class="d-flex
-                                                        align-items-center">
-                                                        <div class="price_text">
-                                                            <p>Price :</p>
-                                                        </div>
-                                                        <div class="price_value
-                                                            d-flex
-                                                            justify-content-center">
-                                                            <input type="text"
-                                                                class="js-input-from"
-                                                                id="amount"
-                                                                readonly />
-                                                            <span>to</span>
-                                                            <input type="text"
-                                                                class="js-input-to"
-                                                                id="amount"
-                                                                readonly />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </aside>
-                                        <!-- Range Slider End -->
-                                    </div>
+                                    </div> {% endcomment %}
+                                     <button type="submit" name="filterbtn" class="btn">Filter</button>
                                 </div>
                                 <!-- Job Category Listing End -->
+                                <form>
                             </div>
                             <!-- Right content -->
                             <div class="col-xl-9 col-lg-9 col-md-8">
@@ -304,49 +317,28 @@
                                 <section class="featured-job-area">
                                     <div class="container">
                                         <!-- Count of Job list Start -->
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="count-job mb-35">
-                                                    <span>39, 782 Internships
-                                                        found</span>
-                                                    <!-- Select job items start -->
-                                                    <div
-                                                        class="select-job-items">
-                                                        <span>Sort by</span>
-                                                        <select name="select">
-                                                            <option value="">None</option>
-                                                            <option value="">Internship
-                                                                list</option>
-                                                            <option value="">
-                                                                Internship list</option>
-                                                            <option value="">Internship
-                                                                list</option>
-                                                        </select>
-                                                    </div>
-                                                    <!--  Select job items End-->
-                                                </div>
-                                            </div>
-                                        </div>
+                                         
                                         <!-- Count of Job list End -->
                                         <!-- single-job-content -->
-                                        <!-- <form method="post">
-                                            {% csrf_token %} -->
-
+                                         
+                                            <div class="col-10">
                                             {% for d in List %}
                                             <div class="single-job-items mb-30">
-                                                <div class="job-items">
-                                                    <div class="company-img">
+                                                <div class="job-items col-8">
+                                                    <div class="company-img col-2">
                                                         <a href="#"><img src="/media/{{d.Profile_picture}}" height="64" width="64" alt=""></a>
                                                     </div>
-                                                    <div class="job-tittle job-tittle2">
+                                                    <div class="job-tittle job-tittle2 col-6">
                                                         <a href="/internship_detail/{{d.internship_id}}">
                                                             <h4> {{ d.Profile }}</h4>
+                                                             
                                                         </a>
                                                         <ul>
-                                                            <li>{{d.internship_id}}</li>
                                                             <li>{{d.Organization_name}}</li>
                                                             <li><i class="fas fa-map-marker-alt"></i>{{d.location }}</li>
                                                             <li>{{ d.Stiepend }}</li>
+                                                            <li>{{d.Internship_type}}</li>
+                                                            <li>{{ d.Posted_date }}</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -355,13 +347,15 @@
                                                     <a href="/save/{{d.internship_id}}" role="button">Save</a>
                                                 </div>
                                                 <div class="apply-btn2">
-                                                    <a href="{% url 'student_sent_resume' %}" class="btn">Apply Now</a>
+                                                    <a href="/apply/{{d.internship_id}}" class="btn">Apply Now</a>
 
                                                 </div>
-                                                <span>{{ d.Posted_date }}</span>
+                                                
+                                                
                                             </div>
                                             {% endfor %}
-                                        <!-- </form> -->
+                                            </div>
+                                        
                                     </div>
                                 </section>
                                 <!-- Featured_job_end -->
@@ -398,7 +392,10 @@
                 </div>
                 <!--Pagination End  -->
 
-            </main>
+            
+            </div>
+        </div>
+        </main>
             <footer>
                 <!-- Footer Start-->
                 <div class="footer-area footer-bg footer-padding">

@@ -67,7 +67,7 @@
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
                                     <a href="{% url 'studentlogin' %}" class="btn head-btn2">Student</a>
-                                    <a href="{% url 'employerlogin' %}" class="btn head-btn2">Employe</a>
+                                    <a href="{% url 'employerlogin' %}" class="btn head-btn2">Employer</a>
                                     <a href="{% url 'adminlogin' %}" class="btn head-btn2">Admin</a>
                                 </div>
                             </div>
@@ -97,13 +97,15 @@
                     <h3 class="thin text-center">Register a new account</h3>
                     <form method="post" name="myform" onsubmit="return registration();">
                         {% csrf_token %}
-                        {% for message in messages %}
                         {% if messages %}
+                        {% for message in messages %}
+                         
                         <script>
                             swal("Welcome!", "Registration Succesful!", "success");
                         </script>
-                        {% endif %}
+                         
                         {% endfor %}
+                        {% endif %}
                         <div class="top-margin">
                             <label>First Name</label>
                             <input type="text" name="fname" class="form-control">

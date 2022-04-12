@@ -90,17 +90,20 @@
             </header>
             <form method="post" enctype="multipart/form-data" name="myform" onsubmit="return post();">
                 {% csrf_token %}
-                {% for message in messages %}
                 {% if messages %}
+                {% for message in messages %}
+                
                 <script>
                     swal("Succesfully Uploaded Your Post", "success");
                 </script>
-                {% endif %}
+                
                 {% endfor %}
+                {% endif %}
                 <div class="row">
                     <div class="col-sm-3">
                         <label for="validationServer01">Organization name</label>
-                        <input name="org_name" type="text" class="form-control " id="validationServer01" placeholder="Organization name" >
+                        <input name="org_name" type="text" class="form-control " 
+                         placeholder="Organization name" >
                         <div class="valid-feedback">
                         
                         </div>
@@ -108,7 +111,16 @@
                     
                     <div class="col-sm-3">
                         <label for="validationServer01">Organization Email</label>
-                        <input name="email" type="text" class="form-control " id="validationServer01" placeholder="Organization  Email">
+                        <input name="email" type="text" class="form-control " 
+                         placeholder="Organization  Email">
+                        <div class="valid-feedback">
+                        
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="validationServer01">Mobile</label>
+                        <input name="mobile" type="text" class="form-control " 
+                         placeholder="Contact Number">
                         <div class="valid-feedback">
                         
                         </div>
@@ -116,7 +128,8 @@
 
                     <div class="col-sm-3">
                         <label for="validationServer01">Organization Website</label>
-                        <input name="website" type="text" class="form-control " id="validationServer01" placeholder="Organization Website">
+                        <input name="website" type="text" class="form-control " 
+                         placeholder="Organization Website">
                         <div class="valid-feedback">
                         
                         </div>
@@ -124,7 +137,8 @@
 
                     <div class="col-sm-3">
                         <label for="validationServer01"> Year of establishment</label>
-                        <input name="Year" type="text" class="form-control " id="validationServer01" placeholder="Year of establishment">
+                        <input name="Year" type="text" class="form-control " 
+                         placeholder="Year of establishment">
                         <div class="valid-feedback">
                         
                         </div>
@@ -134,17 +148,11 @@
                     <br>
                     <br>
                     <br>
-                    <div class="col-sm-3">
-                        <label for="validationServer01"> Pan Card </label>
-                        <input name="Pan" type="text" class="form-control " id="validationServer01" placeholder="Pan Card ">
-                        <div class="valid-feedback">
-                        
-                        </div>
-                    </div>
 
                     <div class="col-sm-3">
                         <label for="validationServer02">Location</label>
-                        <input name="location" type="text" class="form-control" id="validationServer02" placeholder="Location">
+                        <input name="location" type="text" class="form-control" 
+                         placeholder="Location">
                         <div class="valid-feedback">
                         
                        </div>
@@ -156,14 +164,14 @@
                         
                             <select name="profile">
                             <option>Profile</option>   
-                            <option value ="Design and creative">   Design and Creative </option> 
-                            <option value = "Design and Development">  Design and Development  </option>  
-                            <option value = "Sales and Marketing"> Sales and Marketing  </option>  
-                            <option value = "Mobile Application"> Mobile Application </option>  
-                            <option value = "Construction"> Construction </option>
-                            <option value = "IT">  Information Technology  </option>
-                            <option value = "BPO">   BPO  </option>
-                            <option value = "Content Writer">   Content Writer  </option>  
+                            <option value ="Design and Creative">Design and Creative</option> 
+                            <option value = "Design and Development">Design and Development</option>  
+                            <option value = "Sales and Marketing">Sales and Marketing</option>  
+                            <option value = "Mobile Application">Mobile Application</option>  
+                            <option value = "Construction">Construction</option>
+                            <option value = "Information Technology">Information Technology</option>
+                            <option value = "BPO">BPO</option>
+                            <option value = "Content Writer">Content Writer</option>  
                             </select>
                     </div>
                     <div class="col-sm-2">
@@ -172,10 +180,10 @@
                         
                             <select name="internship_type">
                             <option>Internship Type</option>   
-                            <option value ="Regular">   Regular </option> 
-                            <option value = "Work From Home">   Work From Home  </option>  
-                            <option value = "Full Time"> Full Time  </option>  
-                            <option value = "Part Time"> Part Time </option>    
+                            <option value ="Regular">Regular</option> 
+                            <option value = "Work From Home">Work From Home</option>  
+                            <option value = "Full Time">Full Time</option>  
+                            <option value = "Part Time">Part Time</option>    
                             </select>
                     </div>
                 </div>

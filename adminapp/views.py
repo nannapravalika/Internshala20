@@ -25,7 +25,7 @@ def Admin_Employer(request):
 
 
 def Admin_Request(request):     
-    Request= EmployePostModel.objects.all() 
+    Request= EmployePostModel.objects.filter(emp_status="pending") 
     messages.success(request, "Message sent." )           
     return render(request,'admin/admin_req_view.html',  {'Req':Request})
 

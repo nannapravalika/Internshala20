@@ -67,7 +67,7 @@
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
                                     <a href="{% url 'studentlogin' %}" class="btn head-btn2">Student</a>
-                                    <a href="{% url 'employerlogin' %}" class="btn head-btn2">Employe</a>
+                                    <a href="{% url 'employerlogin' %}" class="btn head-btn2">Employer</a>
                                     <a href="{% url 'adminlogin' %}" class="btn head-btn2">Admin</a>
                                 </div>
                             </div>
@@ -88,22 +88,24 @@
     <!-- Article main content -->
     <article class="col-xs-12 maincontent">
         <header class="page-header">
-            <h1 class="page-title">      Employe Registration</h1>
+            <h1 class="page-title">      Employer Registration</h1>
         </header>
         
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3 class="thin text-center">Register a new account</h3>
-                    <form method="post" name="myform" onsubmit="return registration();">
+                    <form method="post" enctype="multipart/form-data" name="myform" onsubmit="return registration();">
                         {% csrf_token %}
-                        {% for message in messages %}
                         {% if messages %}
+                        {% for message in messages %}
+                        
                         <script>
                             swal("Welcome!", "Registration Succesful!", "success");
                         </script>
-                        {% endif %}
+                        
                         {% endfor %} 
+                        {% endif %}
                         <div class="top-margin">
                             <label>First Name</label>
                             <input type="text" name="fname" class="form-control">
@@ -120,6 +122,20 @@
                             <label>Office Email Address <span class="text-danger">*</span></label>
                             <input type="text" name="email" class="form-control">
                         </div>
+                        <br>
+                        <br>
+                        <div class="row top-margin">
+                            <div class="col-sm-6">
+                                <label for="validationServer01"> Pan Card </label>
+                                <input name="pan" type="text" class="form-control " 
+                                placeholder="Enter Pan Card ">
+                                
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="formFile" class="form-label">Upload Pan Card</label>
+                                <input name="panpic" class="form-control" type="file" id="formFile" >
+                            </div>
+                        </div>   
                         <br>
                         <br>
                         <div class="row top-margin">

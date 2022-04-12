@@ -58,9 +58,9 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="{% url 'student_home' %}">Home</a></li>
-                                            <li><a href="{% url 'student_response' %}">Responses</a></li>
                                             <li> <a href="{% url 'internships_listing' %}">Internships</a></li>
                                             <li><a href="{% url 'student_saved' %}">Saved</a></li>
+                                            <li><a href="{% url 'student_response' %}" ><i class="fab fas fa-user-circle"></i>  My Profile</a></li>
                                         </ul>
                                     </nav>
                                 </div>          
@@ -88,7 +88,7 @@
         <!-- Hero Area Start-->
        
         <div class="slider-area ">
-        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{% static 'img/hero/about.jpg">
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{% static 'img/hero/about.jpg' %}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -164,13 +164,14 @@
                               <li>Stiepend :  <span>{{ d.Stiepend }}</span></li>
                               <li>Application date : <span>{{ d.Start_Date }}</span></li>
                           </ul>
-                         <div class="items-link items-link2 f-right">
-                            <a href="{% url 'student_saved' %}" class="btn">Save</a>
-                         </div>
+                          <div class="items-link items-link2 f-right">
+                            <!-- <input type="submit" value="Save" /> -->
+                            <a href="/save/{{d.internship_id}}" role="button">Save</a>
+                        </div>
                          <br>
                          <br>
                          <div class="apply-btn2">
-                            <a href="{% url 'student_sent_resume' %}" class="btn">Apply</a>
+                            <a href="/apply/{{d.internship_id}}" class="btn">Apply</a>
                             <span>{{ d.Posted_date }}</span>
                          </div>
                        </div>

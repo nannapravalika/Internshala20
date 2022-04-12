@@ -58,9 +58,9 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="{% url 'student_home' %}">Home</a></li>
-                                            <li><a href="{% url 'student_response' %}">Responses</a></li>
-                                            <li> <a href=" {% url 'internships_listing' %}">Internships</a></li>
+                                            <li> <a href="{% url 'internships_listing' %}">Internships</a></li>
                                             <li><a href="{% url 'student_saved' %}">Saved</a></li>
+                                            <li><a href="{% url 'student_response' %}" ><i class="fab fas fa-user-circle"></i>  My Profile</a></li>
                                         </ul>
                                     </nav>
                                 </div>          
@@ -91,17 +91,22 @@
         </header>
         <form method="post"  enctype="multipart/form-data"  name="myform" onsubmit="return apply();">
             {% csrf_token %}
-            {% for message in messages %}
             {% if messages %}
+            {% for message in messages %}
+           
             <script>
-                swal("Welcome!", "Registration Succesful!", "success");
+                swal("Applied!", "Application Succesful!", "success");
             </script>
-            {% endif %}
+            
             {% endfor %}
+            {% endif %}
+            {% if data %}
+            {% for d in data %}
             <div class="row">
+               
                 <div class="col-sm-3">
                     <label for="validationServer01">Name</label>
-                    <input name="fname" type="text" class="form-control " id="validationServer01" placeholder="Full name">
+                    <input name="fname" type="text" class="form-control " value="{{d.student_name}}" placeholder="Full name">
                     <div class="valid-feedback">
                     
                     </div>
@@ -109,7 +114,7 @@
                 
                 <div class="col-sm-3">
                     <label for="validationServer02">Email</label>
-                    <input name="email" type="text" class="form-control" id="validationServer02" placeholder="Email">
+                    <input name="email" type="text" class="form-control" value="{{d.email}}" placeholder="Email">
                     <div class="valid-feedback">
                     
                     </div>
@@ -119,7 +124,7 @@
                     <label>  Highest Qualification </label> 
                     <br> 
                         <select name="qualification">  
-                        <option>Select One</option> 
+                        <option value = "{{d.Qualification}}">__Select One__</option> 
                         <option value = " SSC">  SSC  </option>  
                         <option value = "Inter">  Inter   </option>  
                         <option value = "BE/BTech">BE/BTech </option>  
@@ -131,7 +136,7 @@
                 </div>
                 <div class="col-sm-2">
                     <label for="validationServer03">Percentage</label>
-                    <input name="percentage" type="text" class="form-control" id="validationServer03" placeholder="Percentage">
+                    <input name="percentage" type="text" class="form-control" value="{{d.Percentage}}" placeholder="Percentage">
                     <div class="valid-feedback">
                     
                     </div>
@@ -144,7 +149,7 @@
             <div class="row"> 
                 <div class="col-sm-4">
                     <label for="validationServer05">City</label>
-                    <input name="City" type="text" class="form-control " id="validationServer05" placeholder="City">
+                    <input name="City" type="text" class="form-control"  placeholder="City" value={{d.City}}>
                     <div class="valid-feedback">
                     
                     </div>
@@ -152,7 +157,7 @@
                 
                 <div class="col-sm-4">
                     <label for="validationServer05">State</label>
-                    <input name="State" type="text" class="form-control  " id="validationServer05"  placeholder="State">
+                    <input name="State" type="text" class="form-control" placeholder="State" value={{d.State}}  >
                     <div class="valid-feedback">
 
                     </div>
@@ -160,7 +165,7 @@
                 
                 <div class="col-sm-2">
                     <label for="validationServer05">Postal Code</label>
-                    <input name="Pcode" type="text" class="form-control " id="validationServer05"placeholder="Postal Code">
+                    <input name="Pcode" type="text" class="form-control " value="{{d.Pcode}}" placeholder="Postal Code">
                     <div class="valid-feedback">
                     
                     </div>
@@ -170,7 +175,7 @@
             <br>
             <div class=col-sm-6>
                 <label for="validationServer05">Cover Letter (Optional)</label>
-                <textarea name="cover_letter" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                <textarea name="cover_letter" class="form-control" value="{{d.CoverLetter}}" rows="4"></textarea>
 
                 <div class="valid-feedback">
                 
@@ -178,8 +183,8 @@
             </div>
             <div class=col-sm-6>
                 <label for="validationServer05">Skills</label>
-                <textarea name="skills" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
-
+                <textarea name="skills" class="form-control"   rows="4">{{d.Skills}}</textarea>
+                
                 <div class="valid-feedback">
                 
                 </div>
@@ -189,8 +194,21 @@
             <br>
             <div class="col-md-6 mb-5">
                 <label for="formFile" class="form-label">Upload Resume</label>
-                <input name="resume" class="form-control" type="file" id="formFile">
+                <input name="resume" class="form-control" type="file">
+                <p>{{d.Resume}}</p>
             </div>
+            <br>
+            <br>  
+            <br>
+            <br>  
+            <br>
+            <br>  
+            <br>
+            <a class="text-primary" href="/media/{{d.Resume}}" type="button"><i class="fa fas fa-download"></i></a>
+            <br>  
+            <br> 
+            {% endfor %}
+            {% endif %}
             <br>  
             <br> 
             <br>

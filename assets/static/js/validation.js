@@ -68,6 +68,7 @@ function post() {
     var name=document.myform.org_name
     var email=document.myform.email
     var emailformat=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([com\co\.\in])+$/; // to validate email id
+    var contact=document.myform.mobile
     var website=document.myform.website
     var year=document.myform.Year
     var pan=document.myform.Pan
@@ -94,6 +95,15 @@ function post() {
         return false;
     }
 
+    if (contact.value == '') {
+
+        alert("Please Enter Contact Number");
+
+        return false;
+
+    }
+
+     
     if (website.value == ''){
         alert("Please Enter Website");
         return false;
@@ -193,7 +203,8 @@ function apply() {
         return false;
     }
 
-    if (qualification.value == 'Select One'){
+
+    if (qualification.value == '__Select One__'){
         alert("Please Select Qualification");
         
         return false;

@@ -67,7 +67,7 @@
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
                                     <a href="{% url 'studentlogin' %}" class="btn head-btn2">Student</a>
-                                    <a href="{% url 'employerlogin' %}" class="btn head-btn2">Employe</a>
+                                    <a href="{% url 'employerlogin' %}" class="btn head-btn2">Employer</a>
                                     <a href="{% url 'adminlogin' %}" class="btn head-btn2">Admin</a>
                                 </div>
                             </div>
@@ -101,24 +101,7 @@
                         <div class="row">
                             <div class="col-xl-8">
                                 <!-- form -->
-                                <form action="#" class="search-box">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Internship Tittle or keyword">
-                                    </div>
-                                    <div class="select-form">
-                                        <div class="select-itms">
-                                            <select name="select" id="select1">
-                                                <option value=""> Stream</option>
-                                                <option value=""> Design & Development</option>
-                                                <option value="">Sales & Marketing</option>
-                                                <option value="">Mobile Application</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="search-form">
-                                        <a href="{% url 'studentlogin' %}">Find Internships</a>
-                                    </div>	
-                                </form>	
+                                
                             </div>
                         </div>
                     </div>
@@ -145,8 +128,8 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="{% url 'studentlogin' %}">Design & Creative</a></h5>
-                                <span>(653)</span>
+                               <h5><a href="{% url 'studentlogin' %}">Design and Creative</a></h5>
+                                <span>{{Design_and_Creative}}</span>
                             </div>
                         </div>
                     </div>
@@ -157,7 +140,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="{% url 'studentlogin' %}">Design & Development</a></h5>
-                                <span>(658)</span>
+                                <span>{{Design_and_Development}}</span>
                             </div>
                         </div>
                     </div>
@@ -168,7 +151,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="{% url 'studentlogin' %}">Sales & Marketing</a></h5>
-                                <span>(658)</span>
+                                <span>{{Sales_and_Marketing}}</span>
                             </div>
                         </div>
                     </div>
@@ -179,7 +162,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="{% url 'studentlogin' %}">Mobile Application</a></h5>
-                                <span>(658)</span>
+                                <span>{{Mobile_Application}}</span>
                             </div>
                         </div>
                     </div>
@@ -190,7 +173,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="{% url 'studentlogin' %}">Construction</a></h5>
-                                <span>(658)</span>
+                                <span>{{Construction}}</span>
                             </div>
                         </div>
                     </div>
@@ -201,7 +184,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="{% url 'studentlogin' %}">Information Technology</a></h5>
-                                <span>(658)</span>
+                                <span>{{Information_Technology}}</span>
                             </div>
                         </div>
                     </div>
@@ -212,7 +195,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="{% url 'studentlogin' %}">BPO</a></h5>
-                                <span>(658)</span>
+                                <span>{{bpo}}</span>
                             </div>
                         </div>
                     </div>
@@ -223,7 +206,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="{% url 'studentlogin' %}">Content Writer</a></h5>
-                                <span>(658)</span>
+                                <span>{{Content_Writer}}</span>
                             </div>
                         </div>
                     </div>
