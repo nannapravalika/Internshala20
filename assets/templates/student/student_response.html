@@ -143,11 +143,11 @@
                                     {% csrf_token %}
                                     {% if messages %}
                                     {% for message in messages %}
-                                   
-                                    <script>
-                                        swal("Updated Profile", "Succesfully!", "");
-                                    </script>
-                                    
+                                     
+                                        <script>
+                                            swal("Updated Profile", "Succesfully!", "success","OK");
+                                        </script>
+                                     
                                     {% endfor %}
                                     {% endif %}
                                     <div class="row">

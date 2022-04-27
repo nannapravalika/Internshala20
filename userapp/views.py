@@ -111,8 +111,8 @@ def Student_response(request):
             edit.email=email
             edit.Skills=Skills
             edit.save(update_fields=['student_name','Qualification','Percentage','City','State','Pcode','email','Skills'])
-        
-        
+           
+    messages.success(request, "Message sent." )
         
     
     return render (request,'student/student_response.html',{'profile': profile,'Applied':Applied,'Saved':Saved})
